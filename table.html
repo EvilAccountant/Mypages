@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <script src="js/jquery/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
+    <!--bootstrap4.0 require-->
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+</head>
+<body>
+    <!--table 基本表格样式-->
+    <!--table-bordered 加边框-->
+    <!--table-hover 加悬停变色-->
+    <!--table-responsive 向左靠拢-->
+    <table class="table table-bordered table-hover table-responsive text-center">
+        <!--bootstrap thead 默认居左 ，需在th中添加text-center -->
+        <thead>
+            <tr>
+                <th>职业</th>
+                <th>角色类型</th>
+                <th>主要属性</th>
+                <th>武器类型</th>
+                <th>防具类型</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!--table-active 已选中效果 悬停无效-->
+            <tr class="table-active">
+                <td>战士</td>
+                <td>坦克/输出</td>
+                <td>力量</td>
+                <td>单手+盾牌/双手/双持</td>
+                <td>板甲</td>
+            </tr>
+            <!--table-success 绿色效果-->
+            <tr class="table-success">
+                <td>猎人</td>
+                <td>输出</td>
+                <td>敏捷</td>
+                <td>枪/弓</td>
+                <td>锁甲</td>
+            </tr>
+            <tr>
+                <td>萨满</td>
+                <td>输出/治疗</td>
+                <td>智力/敏捷</td>
+                <td>单手+盾牌/单手+副手/法杖</td>
+                <td>锁甲</td>
+            </tr>
+            <!--table-warning 黄色效果-->
+            <tr class="table-warning">
+                <td>盗贼</td>
+                <td>输出</td>
+                <td>敏捷</td>
+                <td>匕首</td>
+                <td>皮甲</td>
+            </tr>
+            <!--table-info 蓝色效果-->
+            <tr class="table-info">
+                <td>法师</td>
+                <td>输出</td>
+                <td>智力</td>
+                <td>法杖/单手+副手</td>
+                <td>布甲</td>
+            </tr>
+            <tr>
+                <td>德鲁伊</td>
+                <td>坦克/治疗/输出</td>
+                <td>敏捷/智力</td>
+                <td>双手杖/法杖</td>
+                <td>皮甲</td>
+            </tr>
+            <!--table-danger 粉色效果-->
+            <tr class="table-danger">
+                <td>圣骑士</td>
+                <td>坦克/治疗/输出</td>
+                <td>力量/智力</td>
+                <td>单手+盾牌/双手</td>
+                <td>板甲</td>
+            </tr>
+            <tr>
+                <td>牧师</td>
+                <td>治疗/输出</td>
+                <td>智力</td>
+                <td>法杖/单手+副手</td>
+                <td>布甲</td>
+            </tr>
+            <!--table-inverse 反色-->
+            <tr class="table-inverse">
+                <td>术士</td>
+                <td>输出</td>
+                <td>智力</td>
+                <td>法杖/单手+副手</td>
+                <td>布甲</td>
+            </tr>
+            <tr>
+                <td>死亡骑士</td>
+                <td>坦克/输出</td>
+                <td>力量</td>
+                <td>双手/双持</td>
+                <td>板甲</td>
+            </tr>
+            <tr>
+                <td>武僧</td>
+                <td>坦克/治疗/输出</td>
+                <td>敏捷/智力</td>
+                <td>双手/双持</td>
+                <td>皮甲</td>
+            </tr>
+            <tr>
+                <td>恶魔猎手</td>
+                <td>坦克/输出</td>
+                <td>敏捷</td>
+                <td>双持战刃</td>
+                <td>皮夹</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

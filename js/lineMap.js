@@ -112,14 +112,6 @@ require(
                         '连云港市': [119.178821,34.600018],
                         '宿迁市': [118.275162,33.963008]
                     },
-                    label: {
-                        normal: {
-                            show: true
-                        },
-                        emphasis: {
-                            show: true
-                        }
-                    },
                     markLine : {
                         smooth:true,
                         effect : {
@@ -155,8 +147,39 @@ require(
                             [{name:'南京市', smoothness:0.1}, {name:'连云港市',value:20}],
                             [{name:'南京市', smoothness:0.1}, {name:'宿迁市',value:10}]
                         ]
-                    }
-                },
+                    },
+                    markPoint : {
+                    symbol:'circle',
+                    symbolSize : 5,
+                    effect : {
+                        show: true,
+                        shadowBlur : 0
+                    },
+                    itemStyle:{
+                        normal:{
+                            label:{show:false}
+                        },
+                        emphasis: {
+                            label:{position:'top'}
+                        }
+                    },
+                    data : [
+                        {name:'苏州市',value:95},
+                        {name:'南京市',value:95},
+                        {name:'无锡市',value:90},
+                        {name:'南通市',value:80},
+                        {name:'常州市',value:70},
+                        {name:'徐州市',value:60},
+                        {name:'盐城市',value:50},
+                        {name:'扬州市',value:40},
+                        {name:'泰州市',value:30},
+                        {name:'镇江市',value:20},
+                        {name:'淮安市',value:10},
+                        {name:'连云港市',value:10},
+                        {name:'宿迁市',value:10},
+                    ]
+                }
+            },
                 {
                     name: '苏州市',
                     type: 'map',

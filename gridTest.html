@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+    maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>gridTest</title>
+    <!--bootstrap4.0 require and it must be claimed before bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .test{
+            height: 300px;
+            background-color: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+    <!--xs 超小屏幕 手机 (<768px)-->
+    <!--sm 小屏幕 平板 (≥768px)-->
+    <!--md 中等屏幕 桌面显示器 (≥992px)-->
+    <!--lg 大屏幕 大桌面显示器 (≥1200px)-->
+    <!--列数为12 后面数字为所占列数的份额 即X/12-->
+    <!--offset从左向右偏移 X/12 的距离-->
+    <div class="test col-lg-3 col-md-4 col-sm-6 col-xs-12 offset-lg-4"></div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery/jquery-3.2.1.js"></script>
+    <script src="https://npmcdn.com/tether@1.3.3/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap/bootstrap.js"></script>
+</body>
+</html>

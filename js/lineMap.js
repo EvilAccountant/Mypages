@@ -24,7 +24,7 @@ require(
             color: ['gold','aqua','lime'],
             title : {
                 text: '模拟迁徙',
-                subtext:'数据纯属虚构',
+                subtext:'数据纯属虚构，如有雷同，不胜荣幸',
                 x:'center',
                 textStyle : {
                     color: '#fff'
@@ -112,6 +112,7 @@ require(
                         '连云港市': [119.178821,34.600018],
                         '宿迁市': [118.275162,33.963008]
                     },
+                    //线
                     markLine : {
                         smooth:true,
                         effect : {
@@ -148,6 +149,7 @@ require(
                             [{name:'南京市', smoothness:0.1}, {name:'宿迁市',value:10}]
                         ]
                     },
+                    //点
                     markPoint : {
                     symbol:'circle',
                     symbolSize : 5,

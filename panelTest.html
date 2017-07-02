@@ -3,8 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 </head>
 <body>
+    <!--panel-heading 面板标题-->
+    <!--panel-body    面板内容-->
+    <!--panel-footer  面板注脚-->
+    <div class="panel panel-default">
+        <div class="panel-heading">面板标题</div>
+        <div class="panel-body">面板内容</div>
+        <div class="panel-footer">面板注脚</div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">面板标题</div>
+        <div class="panel-body">面板内容</div>
+        <div class="panel-footer">面板注脚</div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">面板标题</div>
+        <div class="panel-body">面板内容</div>
+        <div class="panel-footer">面板注脚</div>
+    </div>
+
+    <!--面板插入表格以及列表-->
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">面板标题</div>
+        <div class="panel-body">
+            <p>面板内容有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多</p>
+            <p>面板内容有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多</p>
+            <p>面板内容有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多</p>
+            <p>面板内容有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多</p>
+            <p>面板内容有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多有很多很多</p>
+        </div>
+
+        <!-- Table -->
+        <table class="table table-bordered table-hover table-responsive text-center">
+            <thead>
+            <tr>
+                <th>职业</th>
+                <th>角色类型</th>
+                <th>主要属性</th>
+                <th>武器类型</th>
+                <th>防具类型</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-active">
+                <td>战士</td>
+                <td>坦克/输出</td>
+                <td>力量</td>
+                <td>单手+盾牌/双手/双持</td>
+                <td>板甲</td>
+            </tr>
+            <tr class="table-success">
+                <td>猎人</td>
+                <td>输出</td>
+                <td>敏捷</td>
+                <td>枪/弓</td>
+                <td>锁甲</td>
+            </tr>
+            <tr>
+                <td>萨满</td>
+                <td>输出/治疗</td>
+                <td>智力/敏捷</td>
+                <td>单手+盾牌/单手+副手/法杖</td>
+                <td>锁甲</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-heading">装备数量</li>
+            <li class="list-group-item list-group-item-warning"><span class="badge">666</span>史诗</li>
+            <li class="list-group-item list-group-item-danger"><span class="badge">777</span>神器</li>
+            <li class="list-group-item list-group-item-info"><span class="badge">888</span>精良</li>
+            <li class="list-group-item list-group-item-success"><span class="badge">999</span>优良</li>
+            <li class="list-group-item "><span class="badge">9527</span>普通</li>
+        </ul>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
 
 </body>
 </html>

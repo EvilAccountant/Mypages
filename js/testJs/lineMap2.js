@@ -52,25 +52,22 @@ var convertData = function (data) {
     return res;
 };
 
-var color = ['#ffffff', '#ffa022', '#46bee9'];
 var series = [];
 
-[['江苏', NJData]].forEach(function (item, i) {
+[['南京', NJData]].forEach(function (item, i) {
     series.push({
-            name: '江苏Top10',
+            name: '南京',
             type: 'lines',
             zlevel: 1,
             effect: {
                 show: true,
                 period: 6,
-                trailLength: 0.7,
-                color: '#fff',
-                symbolSize: 3
+                trailLength: 0.8,
+                symbolSize: 4
             },
             lineStyle: {
                 normal: {
                     type:'solid',
-                    color: color[i],
                     width: 0,
                     curveness: 0.2
                 }
@@ -78,7 +75,7 @@ var series = [];
             data: convertData(item[1])
         },
         {
-            name: '江苏Top10',
+            name: '南京',
             type: 'effectScatter',
             coordinateSystem: 'geo',
             zlevel: 2,
@@ -92,12 +89,7 @@ var series = [];
                     formatter: '{b}'
                 }
             },
-            symbolSize: 6,
-            itemStyle: {
-                normal: {
-                    color: color[i]
-                }
-            },
+            symbolSize: 10,
             data: item[1].map(function (dataItem) {
                 return {
                     name: dataItem[1].name,
@@ -146,9 +138,9 @@ option = {
     animationDurationUpdate: 2000, // for update animation, like legend selected.
     legend: {
         orient: 'vertical',
-        top: 'bottom',
-        left: 'right',
-        data:['江苏Top10'],
+        top: 'top',
+        left: 'left',
+        data:['南京'],
         textStyle: {
             color: '#fff'
         },
@@ -161,14 +153,14 @@ option = {
                 show: false
             }
         },
-        roam: true,
+        roam: 'scale',
         itemStyle: {
             normal: {
-                areaColor: '#323c48',
-                borderColor: '#404a59'
+                areaColor: '#323c48',//地图颜色
+                borderColor: '#404a59'//地图轮廓颜色
             },
             emphasis: {
-                areaColor: '#2a333d'
+                areaColor: '#2a333d'//地图区域激活颜色
             }
         }
     },

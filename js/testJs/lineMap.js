@@ -12,8 +12,6 @@ require(
     [
         'echarts',
         'echarts/chart/map', // 加载map模块
-        'echarts/chart/bar', // 加载bar模块，按需加载
-        'echarts/chart/scatter', // 加载scatter模块，按需加载
     ],
     function (ec) {
         // 基于准备好的dom，初始化echarts图表
@@ -151,37 +149,37 @@ require(
                     },
                     //点
                     markPoint : {
-                    symbol:'circle',
-                    symbolSize : 5,
-                    effect : {
-                        show: true,
-                        shadowBlur : 0
-                    },
-                    itemStyle:{
-                        normal:{
-                            label:{show:false}
+                        symbol:'circle',
+                        symbolSize : 5,
+                        effect : {
+                            show: true,
+                            shadowBlur : 0
                         },
-                        emphasis: {
-                            label:{position:'top'}
-                        }
-                    },
-                    data : [
-                        {name:'苏州市',value:95},
-                        {name:'南京市',value:95},
-                        {name:'无锡市',value:90},
-                        {name:'南通市',value:80},
-                        {name:'常州市',value:70},
-                        {name:'徐州市',value:60},
-                        {name:'盐城市',value:50},
-                        {name:'扬州市',value:40},
-                        {name:'泰州市',value:30},
-                        {name:'镇江市',value:20},
-                        {name:'淮安市',value:10},
-                        {name:'连云港市',value:10},
-                        {name:'宿迁市',value:10},
-                    ]
-                }
-            },
+                        itemStyle:{
+                            normal:{
+                                label:{show:false}
+                            },
+                            emphasis: {
+                                label:{position:'top'}
+                            }
+                        },
+                        data : [
+                            {name:'苏州市',value:95},
+                            {name:'南京市',value:95},
+                            {name:'无锡市',value:90},
+                            {name:'南通市',value:80},
+                            {name:'常州市',value:70},
+                            {name:'徐州市',value:60},
+                            {name:'盐城市',value:50},
+                            {name:'扬州市',value:40},
+                            {name:'泰州市',value:30},
+                            {name:'镇江市',value:20},
+                            {name:'淮安市',value:10},
+                            {name:'连云港市',value:10},
+                            {name:'宿迁市',value:10},
+                        ]
+                    }
+                },
                 {
                     name: '苏州市',
                     type: 'map',

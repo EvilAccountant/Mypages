@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="../js/echarts/echarts.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="height:760px"></div>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var dataMap = {};
+    function dataFormatter(obj) {
+        var pList = ['上海','江苏','浙江'];
+        var temp;
+        for (var year = 2006; year <= 2008; year++) {
+            temp = obj[year];
+            for (var i = 0, l = temp.length; i < l; i++) {
+                obj[year][i] = {
+                    name : pList[i],
+                    value : temp[i]
+                }
+            }
+        }
+        return obj;
+    }
+
+    dataMap.dataGDP = dataFormatter({
+        //max : 60000,
+        2008:[11115,6719.01,16011.9783],
+        2007:[9846.81,5252.76,13607.32],
+        2006:[8117.78,4462.74,11467.6],
+    });
+
+    dataMap.dataEstate = dataFormatter({
+        //max : 3600,
+        2008:[844.59,227.88,513.81],
+        2007:[821.5,183.44,467.97],
+        2006:[658.3,156.64,397.14],
+    });
+
+    dataMap.dataFinancial = dataFormatter({
+        //max : 3200,
+        2008:[1519.19,368.1,420.74],
+        2007:[1302.77,288.17,347.65],
+        2006:[982.37,186.87,284.04],
+    });
+
+
+    option = {
+        baseOption: {
+            timeline: {
+                axisType: 'category',
+                autoPlay: true,
+                playInterval: 5000,
+                data: ['2006', '2007','2008']
+            },
+            legend: {
+                x: 'right',
+                selectedMode: "single",
+                data: ['GDP', '金融', '房地产'],
+                selected: {
+                    'GDP': true, '金融': false, '房地产': false
+                }
+            },
+            grid: {
+                top: 80,
+                bottom: 100,
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow',
+                        label: {
+                            show: true,
+                            formatter: function (params) {
+                                return params.value.replace('\n', '');
+                            }
+                        }
+                    }
+                }
+            },
+            xAxis: [
+                {
+                    'type':'category',
+                    'axisLabel':{'interval':0},
+                    'data':[
+                        '上海','江苏','浙江'
+                    ],
+                    splitLine: {show: false}
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: 'GDP（亿元）'
+                }
+            ],
+            series: [
+                {name: 'GDP', type: 'bar'},
+                {name: '金融', type: 'bar'},
+                {name: '房地产', type: 'bar'},
+            ]
+        },
+        options: [
+            {
+                title : {text: '2006全国宏观经济指标'},
+                series : [
+                    {data: dataMap.dataGDP['2006']},
+                    {data: dataMap.dataFinancial['2006']},
+                    {data: dataMap.dataEstate['2006']},
+                ]
+            },
+            {
+                title : {text: '2007全国宏观经济指标'},
+                series : [
+                    {data: dataMap.dataGDP['2007']},
+                    {data: dataMap.dataFinancial['2007']},
+                    {data: dataMap.dataEstate['2007']},
+                ]
+            },
+            {
+                title : {text: '2008全国宏观经济指标'},
+                series : [
+                    {data: dataMap.dataGDP['2008']},
+                    {data: dataMap.dataFinancial['2008']},
+                    {data: dataMap.dataEstate['2008']},
+                ]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+</script>
+<!--<script type="text/javascript" src="../js/testJs/timeTest.js"></script>-->
+</body>

@@ -20,19 +20,18 @@ var geoCoordMap = {
 };
 
 var NJData=[
-    [{name:'南京市', smoothness:0.1}, {name:'南京市',value:100}],
-    [{name:'南京市', smoothness:0.1}, {name:'苏州市',value:100}],
-    [{name:'南京市', smoothness:0.1}, {name:'无锡市',value:95}],
-    [{name:'南京市', smoothness:0.1}, {name:'南通市',value:90}],
-    [{name:'南京市', smoothness:0.1}, {name:'常州市',value:85}],
-    [{name:'南京市', smoothness:0.1}, {name:'徐州市',value:80}],
-    [{name:'南京市', smoothness:0.1}, {name:'盐城市',value:70}],
-    [{name:'南京市', smoothness:0.1}, {name:'扬州市',value:60}],
-    [{name:'南京市', smoothness:0.1}, {name:'泰州市',value:50}],
-    [{name:'南京市', smoothness:0.1}, {name:'镇江市',value:40}],
-    [{name:'南京市', smoothness:0.1}, {name:'淮安市',value:30}],
-    [{name:'南京市', smoothness:0.1}, {name:'连云港市',value:20}],
-    [{name:'南京市', smoothness:0.1}, {name:'宿迁市',value:10}]
+    [{name: '南京市', smoothness: 0.6, coord: [118.767413,32.041544]}, {name: '苏州市', value: 100, coord: [120.619585,31.299379]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '无锡市', value: 95, coord: [120.301663,31.574729]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '南通市', value: 90, coord: [120.864608,32.016212]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '常州市', value: 85, coord: [119.946973,31.772752]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '徐州市', value: 80, coord: [117.184811,34.261792]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '盐城市', value: 70, coord: [120.139998,33.377631]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '扬州市', value: 60, coord: [119.421003,32.393159]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '泰州市', value: 50, coord: [119.915176,32.484882]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '镇江市', value: 40, coord: [119.452753,32.204402]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '淮安市', value: 30, coord: [119.021265,33.597506]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '连云港市', value: 20, coord: [119.178821,34.600018]}],
+    [{name: '南京市', smoothness: 0.1, coord: [118.767413,32.041544]}, {name: '宿迁市', value: 10, coord: [118.275162,33.963008]}]
 ];
 
 var convertData = function (data) {
@@ -55,29 +54,47 @@ var convertData = function (data) {
 var series = [];
 
 [['南京', NJData]].forEach(function (item, i) {
-    series.push({
+    series.push(
+        {
             name: '南京',
             type: 'lines',
+            coordinateSystem: 'geo',
             zlevel: 1,
-            effect: {
-                show: true,
-                period: 6,
-                trailLength: 0.8,
-                symbolSize: 4
-            },
+            smooth: false,
+            // symbol: ['none', 'arrow'],//起始点标志，终点标志
+            // effect: {
+            //     period: 6,
+            //     trailLength: 0.7,
+            //     color: '#fff',
+            //     symbolSize: 3
+            // },
             lineStyle: {
                 normal: {
-                    type:'solid',
-                    width: 0,
-                    curveness: 0.2
+                    width: 1,
+                    curveness: 0.1,
+                    opacity: 1
                 }
             },
-            data: convertData(item[1])
+            data: [
+                [{name: '南京市->苏州市', coord: [118.767413,32.041544]}, {name: '苏州市', value: 100, coord: [120.619585,31.299379]}],
+                [{name: '南京市->无锡市', coord: [118.767413,32.041544]}, {name: '无锡市', value: 95, coord: [120.301663,31.574729]}],
+                [{name: '南京市->南通市', coord: [118.767413,32.041544]}, {name: '南通市', value: 90, coord: [120.864608,32.016212]}],
+                [{name: '南京市->常州市', coord: [118.767413,32.041544]}, {name: '常州市', value: 85, coord: [119.946973,31.772752]}],
+                [{name: '南京市->徐州市', coord: [118.767413,32.041544]}, {name: '徐州市', value: 80, coord: [117.184811,34.261792]}],
+                [{name: '南京市->盐城市', coord: [118.767413,32.041544]}, {name: '盐城市', value: 70, coord: [120.139998,33.377631]}],
+                [{name: '南京市->扬州市', coord: [118.767413,32.041544]}, {name: '扬州市', value: 60, coord: [119.421003,32.393159]}],
+                [{name: '南京市->泰州市', coord: [118.767413,32.041544]}, {name: '泰州市', value: 50, coord: [119.915176,32.484882]}],
+                [{name: '南京市->镇江市', coord: [118.767413,32.041544]}, {name: '镇江市', value: 40, coord: [119.452753,32.204402]}],
+                [{name: '南京市->淮安市', coord: [118.767413,32.041544]}, {name: '淮安市', value: 30, coord: [119.021265,33.597506]}],
+                [{name: '南京市->连云港市', coord: [118.767413,32.041544]}, {name: '连云港市', value: 20, coord: [119.178821,34.600018]}],
+                [{name: '南京市->宿迁市', coord: [118.767413,32.041544]}, {name: '宿迁市', value: 10, coord: [118.275162,33.963008]}]
+            ]
         },
         {
             name: '南京',
             type: 'effectScatter',
             coordinateSystem: 'geo',
+            symbolSize: 13,
             zlevel: 2,
             rippleEffect: {
                 brushType: 'stroke'
@@ -89,14 +106,14 @@ var series = [];
                     formatter: '{b}'
                 }
             },
-            symbolSize: 10,
             data: item[1].map(function (dataItem) {
                 return {
                     name: dataItem[1].name,
                     value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
                 };
             })
-        });
+        }
+    );
 });
 
 option = {
@@ -114,18 +131,6 @@ option = {
         trigger: 'item',
         formatter: '{b}'
     },
-    toolbox: {
-        show : true,
-        orient : 'vertical',
-        x: 'right',
-        y: 'center',
-        feature : {
-            mark : {show: true},
-            dataView : {show: true, readOnly: false},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        }
-    },
     dataRange: {
         min : 0,
         max : 100,
@@ -139,7 +144,7 @@ option = {
     legend: {
         orient: 'vertical',
         top: 'top',
-        left: 'left',
+        x: 'left',
         data:['南京'],
         textStyle: {
             color: '#fff'
@@ -153,7 +158,7 @@ option = {
                 show: false
             }
         },
-        roam: 'scale',
+        roam: true,
         itemStyle: {
             normal: {
                 areaColor: '#323c48',//地图颜色
@@ -164,6 +169,18 @@ option = {
             }
         }
     },
+    timeline:{
+        show: true,
+        type: 'slider',
+        axisType: 'time',
+        autoPlay: true,
+        playInterval:2000,
+        data:[
+            '2002','2003','2004','2005','2006',
+            '2007','2008','2009','2010','2011',
+        ],
+    },
+
     series: series
 };
 myChart.setOption(option);

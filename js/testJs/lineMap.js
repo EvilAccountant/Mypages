@@ -118,7 +118,7 @@ require(
                             scaleSize: 1,
                             period: 30,
                             color: '#fff',
-                            shadowBlur: 10
+                            shadowBlur: 10,
                         },
                         itemStyle : {
                             normal: {

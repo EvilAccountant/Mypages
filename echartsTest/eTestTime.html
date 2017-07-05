@@ -22,7 +22,7 @@
         var temp;
         for (var year = 2006; year <= 2008; year++) {
             temp = obj[year];
-            for (var i = 0, l = temp.length; i < l; i++) {
+            for (var i = 0; i < temp.length; i++) {
                 obj[year][i] = {
                     name : pList[i],
                     value : temp[i]
@@ -32,12 +32,18 @@
         return obj;
     }
 
-    dataMap.dataGDP = dataFormatter({
-        //max : 60000,
-        2008:[11115,6719.01,16011.9783],
-        2007:[9846.81,5252.76,13607.32],
-        2006:[8117.78,4462.74,11467.6],
-    });
+    dataMap.dataGDP={
+        2008:[{name : '上海',value : 11115},{name : '江苏',value : 6719.01},{name : '浙江',value : 16011.9783}],
+        2007:[{name : '上海',value : 821.5},{name : '江苏',value : 183.44},{name : '浙江',value : 467.97}],
+        2006:[{name : '上海',value : 658.3},{name : '江苏',value : 156.64},{name : '浙江',value : 397.14}],
+    }
+
+//    dataMap.dataGDP = dataFormatter({
+//        //max : 60000,
+//        2008:[11115,6719.01,16011.9783],
+//        2007:[9846.81,5252.76,13607.32],
+//        2006:[8117.78,4462.74,11467.6],
+//    });
 
     dataMap.dataEstate = dataFormatter({
         //max : 3600,

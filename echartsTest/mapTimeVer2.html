@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" style="height:760px"></div>
+    <script>
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/map', // 加载map模块
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+                option = {
+                    timeline:{
+                        data:[
+                            '2002','2003','2004'
+                        ],
+                        label : {
+                            formatter : function(s) {
+                                return s.slice(0, 4);
+                            }
+                        },
+                        autoPlay : true,
+                        playInterval : 1000
+                    },
+                    options:[
+                        {
+                            title : {
+                                'text':'2002全国宏观经济指标',
+                                'subtext':'数据来自国家统计局'
+                            },
+                            tooltip : {'trigger':'item'},
+                            dataRange: {
+                                min: 0,
+                                max : 53000,
+                                text:['高','低'],           // 文本，默认为数值文本
+                                calculable : true,
+                                x: 'left',
+                                color: ['orangered','yellow','lightskyblue']
+                            },
+                            series : [
+                                {
+                                    'name':'GDP',
+                                    'type':'map',
+                                    'data': dataMap.dataGDP['2002']
+                                }
+                            ]
+                        },
+                        {
+                            title : {'text':'2003全国宏观经济指标'},
+                            series : [
+                                {'data': dataMap.dataGDP['2003']}
+                            ]
+                        },
+                        {
+                            title : {'text':'2004全国宏观经济指标'},
+                            series : [
+                                {'data': dataMap.dataGDP['2004']}
+                            ]
+                        }
+                    ]
+                };
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+            }
+        );
+    </script>
+</body>
+</html>

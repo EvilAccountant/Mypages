@@ -55,7 +55,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Export echarts as CommonJS module
+	 * Export echarts3 as CommonJS module
 	 */
 	module.exports = __webpack_require__(1);
 
@@ -1625,7 +1625,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var DOM_ATTRIBUTE_KEY = '_echarts_instance_';
 
 	    /**
-	     * @alias module:echarts
+	     * @alias module:echarts3
 	     */
 	    var echarts = {
 	        /**
@@ -2039,8 +2039,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {Function} creator
 	     * @example
 	     *     var Canvas = require('canvas');
-	     *     var echarts = require('echarts');
-	     *     echarts.setCanvasCreator(function () {
+	     *     var echarts3 = require('echarts3');
+	     *     echarts3.setCanvasCreator(function () {
 	     *         // Small size is enough.
 	     *         return new Canvas(32, 32);
 	     *     });
@@ -2272,7 +2272,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * will be merged by index, and the result sequence of the components is
 	     * consistent to the original sequence.
 	     * (3) `reset` feature (in toolbox). Find detailed info in comments about
-	     * `mergeOption` in module:echarts/model/OptionManager.
+	     * `mergeOption` in module:echarts3/model/OptionManager.
 	     */
 
 	    var zrUtil = __webpack_require__(4);
@@ -2292,7 +2292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var OPTION_INNER_KEY = '\0_ec_inner';
 
 	    /**
-	     * @alias module:echarts/model/Global
+	     * @alias module:echarts3/model/Global
 	     *
 	     * @param {Object} option
 	     * @param {module:echarts/model/Model} parentModel
@@ -3025,7 +3025,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * Caution: do not support clone Date, for performance consideration.
 	     * (There might be a large number of date in `series.data`).
-	     * So date should not be modified in and out of echarts.
+	     * So date should not be modified in and out of echarts3.
 	     *
 	     * @param {*} source
 	     * @return {*} new
@@ -3900,7 +3900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    modelUtil.makeIdAndName = function (mapResult) {
 	        // We use this id to hash component models and view instances
-	        // in echarts. id can be specified by user, or auto generated.
+	        // in echarts3. id can be specified by user, or auto generated.
 
 	        // The id generation rule ensures new view instance are able
 	        // to mapped to old instance when setOption are called in
@@ -4399,8 +4399,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} tpl
 	     * @param {number} value
 	     * @param {boolean} [isUTC=false] Default in local time.
-	     *           see `module:echarts/scale/Time`
-	     *           and `module:echarts/util/number#parseDate`.
+	     *           see `module:echarts3/scale/Time`
+	     *           and `module:echarts3/util/number#parseDate`.
 	     * @inner
 	     */
 	    formatUtil.formatTime = function (tpl, value, isUTC) {
@@ -4495,7 +4495,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        // Avoid accuracy problem in edge, such as
 	        // 146.39 - 62.83 === 83.55999999999999.
-	        // See echarts/test/ut/spec/util/number.js#linearMap#accuracyError
+	        // See echarts3/test/ut/spec/util/number.js#linearMap#accuracyError
 	        // It is a little verbose for efficiency considering this method
 	        // is a hotspot.
 	        if (clamp) {
@@ -5225,7 +5225,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var mathMin = Math.min;
 	    var mathMax = Math.max;
 	    /**
-	     * @alias module:echarts/core/BoundingRect
+	     * @alias module:echarts3/core/BoundingRect
 	     */
 	    function BoundingRect(x, y, width, height) {
 
@@ -5876,7 +5876,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var env = __webpack_require__(2);
 
 	    /**
-	     * @alias module:echarts/model/Model
+	     * @alias module:echarts3/model/Model
 	     * @constructor
 	     * @param {Object} option
 	     * @param {module:echarts/model/Model} [parentModel]
@@ -6011,7 +6011,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * @param {Function} getParentMethod
 	         *        param {Array.<string>|string} path
-	         *        return {module:echarts/model/Model}
+	         *        return {module:echarts3/model/Model}
 	         */
 	        customizeGetParent: function (getParentMethod) {
 	            clazzUtil.set(this, 'getParent', getParentMethod);
@@ -15889,7 +15889,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var layout = __webpack_require__(71);
 
 	    /**
-	     * @alias module:echarts/model/Component
+	     * @alias module:echarts3/model/Component
 	     * @constructor
 	     * @param {Object} option
 	     * @param {module:echarts/model/Model} parentModel
@@ -16813,10 +16813,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // It is recommended that `hoverLayerThreshold` is equivalent to or less than
 	        // `progressiveThreshold`, otherwise hover will cause restart of progressive,
 	        // which is unexpected.
-	        // see example <echarts/test/heatmap-large.html>.
+	        // see example <echarts3/test/heatmap-large.html>.
 	        hoverLayerThreshold: 3000,
 
-	        // See: module:echarts/scale/Time
+	        // See: module:echarts3/scale/Time
 	        useUTC: false
 	    };
 
@@ -16875,7 +16875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'on', 'off', 'getDataURL', 'getConnectedDataURL', 'getModel', 'getOption',
 	        'getViewOfComponentModel', 'getViewOfSeriesModel'
 	    ];
-	    // And `getCoordinateSystems` and `getComponentByElement` will be injected in echarts.js
+	    // And `getCoordinateSystems` and `getComponentByElement` will be injected in echarts3.js
 
 	    function ExtensionAPI(chartInstance) {
 	        zrUtil.each(echartsAPIList, function (name) {
@@ -16980,7 +16980,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *
 	     * [rawOption]:
 	     *
-	     *     An object input to echarts.setOption. 'rawOption' may be an
+	     *     An object input to echarts3.setOption. 'rawOption' may be an
 	     *     'option', or may be an object contains multi-options. For example:
 	     *     var option = {
 	     *         baseOption: {
@@ -17013,8 +17013,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     *         ]
 	     *     };
 	     *
-	     * @alias module:echarts/model/OptionManager
-	     * @param {module:echarts/ExtensionAPI} api
+	     * @alias module:echarts3/model/OptionManager
+	     * @param {module:echarts3/ExtensionAPI} api
 	     */
 	    function OptionManager(api) {
 
@@ -17409,7 +17409,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        seriesIndex: 0,
 
-	        // coodinateSystem will be injected in the echarts/CoordinateSystem
+	        // coodinateSystem will be injected in the echarts3/CoordinateSystem
 	        coordinateSystem: null,
 
 	        /**
@@ -17461,8 +17461,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // If we reverse the order (make data firstly, and then make
 	            // dataBeforeProcessed by cloneShallow), cloneShallow will
 	            // cause data.graph.data !== data when using
-	            // module:echarts/data/Graph or module:echarts/data/Tree.
-	            // See module:echarts/data/helper/linkList
+	            // module:echarts3/data/Graph or module:echarts3/data/Tree.
+	            // See module:echarts3/data/helper/linkList
 	            this.restoreData();
 	        },
 
@@ -18665,7 +18665,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            // There might be some doms created by upper layer application
 	            // at the same level of painter.getViewportRoot() (e.g., tooltip
-	            // dom created by echarts), where 'globalout' event should not
+	            // dom created by echarts3), where 'globalout' event should not
 	            // be triggered when mouse enters these doms. (But 'mouseout'
 	            // should be triggered at the original hovered element as usual).
 	            var element = event.toElement || event.relatedTarget;
@@ -22565,7 +22565,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias module:echarts/data/List
+	     * @alias module:echarts3/data/List
 	     *
 	     * @param {Array.<string|Object>} dimensions
 	     *      For example, ['someDimName', {name: 'someDimName', type: 'someDimType'}, ...].
@@ -24643,7 +24643,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var roundNumber = numberUtil.round;
 
 	    /**
-	     * @alias module:echarts/coord/scale/Interval
+	     * @alias module:echarts3/coord/scale/Interval
 	     * @constructor
 	     */
 	    var IntervalScale = Scale.extend({
@@ -24993,7 +24993,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    /**
-	     * @alias module:echarts/coord/scale/Time
+	     * @alias module:echarts3/coord/scale/Time
 	     * @constructor
 	     */
 	    var TimeScale = IntervalScale.extend({
@@ -27150,7 +27150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        _getSymbolIgnoreFunc: function (data, coordSys) {
 	            var categoryAxis = coordSys.getAxesByScale('ordinal')[0];
-	            // `getLabelInterval` is provided by echarts/component/axis
+	            // `getLabelInterval` is provided by echarts3/component/axis
 	            if (categoryAxis && categoryAxis.isLabelIgnored) {
 	                return zrUtil.bind(categoryAxis.isLabelIgnored, categoryAxis);
 	            }
@@ -27270,7 +27270,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias module:echarts/chart/helper/SymbolDraw
+	     * @alias module:echarts3/chart/helper/SymbolDraw
 	     * @param {module:zrender/graphic/Group} [symbolCtor]
 	     */
 	    function SymbolDraw(symbolCtor) {
@@ -27417,7 +27417,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias {module:echarts/chart/helper/Symbol}
+	     * @alias {module:echarts3/chart/helper/Symbol}
 	     * @param {module:echarts/data/List} data
 	     * @param {number} idx
 	     * @extends {module:zrender/graphic/Group}
@@ -28670,7 +28670,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @implements
-	     * see {module:echarts/CoodinateSystem}
+	     * see {module:echarts3/CoodinateSystem}
 	     */
 	    gridProto.convertToPixel = function (ecModel, finder, value) {
 	        var target = this._findConvertTarget(ecModel, finder);
@@ -28684,7 +28684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @implements
-	     * see {module:echarts/CoodinateSystem}
+	     * see {module:echarts3/CoodinateSystem}
 	     */
 	    gridProto.convertFromPixel = function (ecModel, finder, value) {
 	        var target = this._findConvertTarget(ecModel, finder);
@@ -28736,7 +28736,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @implements
-	     * see {module:echarts/CoodinateSystem}
+	     * see {module:echarts3/CoodinateSystem}
 	     */
 	    gridProto.containPoint = function (point) {
 	        var coord = this._coordsList[0];
@@ -29167,7 +29167,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:echarts/coord/Cartesian
+	     * @alias module:echarts3/coord/Cartesian
 	     * @constructor
 	     */
 	    var Cartesian = function (name) {
@@ -29277,8 +29277,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Extend axis 2d
-	     * @constructor module:echarts/coord/cartesian/Axis2D
-	     * @extends {module:echarts/coord/cartesian/Axis}
+	     * @constructor module:echarts3/coord/cartesian/Axis2D
+	     * @extends {module:echarts3/coord/cartesian/Axis}
 	     * @param {string} dim
 	     * @param {*} scale
 	     * @param {Array.<number>} coordExtent
@@ -29377,7 +29377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Transform global coord to local coord,
 	         * i.e. var localCoord = axis.toLocalCoord(80);
-	         * designate by module:echarts/coord/cartesian/Grid.
+	         * designate by module:echarts3/coord/cartesian/Grid.
 	         * @type {Function}
 	         */
 	        toLocalCoord: null,
@@ -29385,7 +29385,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Transform global coord to local coord,
 	         * i.e. var globalCoord = axis.toLocalCoord(40);
-	         * designate by module:echarts/coord/cartesian/Grid.
+	         * designate by module:echarts3/coord/cartesian/Grid.
 	         * @type {Function}
 	         */
 	        toGlobalCoord: null
@@ -34891,7 +34891,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    if (true) {
 	        var mapNotExistsError = function (name) {
-	            console.error('Map ' + name + ' not exists. You can download map file on http://echarts.baidu.com/download-map.html');
+	            console.error('Map ' + name + ' not exists. You can download map file on http://echarts3.baidu.com/download-map.html');
 	        };
 	    }
 
@@ -34993,9 +34993,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	         *
 	         * @example
 	         *     $.get('USA.json', function (geoJson) {
-	         *         echarts.registerMap('USA', geoJson);
+	         *         echarts3.registerMap('USA', geoJson);
 	         *         // Or
-	         *         echarts.registerMap('USA', {
+	         *         echarts3.registerMap('USA', {
 	         *             geoJson: geoJson,
 	         *             specialAreas: {}
 	         *         })
@@ -35061,7 +35061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    };
 
-	    // Inject methods into echarts
+	    // Inject methods into echarts3
 	    var echarts = __webpack_require__(1);
 
 	    echarts.registerMap = geoCreator.registerMap;
@@ -35423,7 +35423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:echarts/coord/geo/parseGeoJson
+	     * @alias module:echarts3/coord/geo/parseGeoJson
 	     * @param {Object} geoJson
 	     * @return {module:zrender/container/Group}
 	     */
@@ -35943,19 +35943,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * @implements
-	         * see {module:echarts/CoodinateSystem}
+	         * see {module:echarts3/CoodinateSystem}
 	         */
 	        convertToPixel: zrUtil.curry(doConvert, 'dataToPoint'),
 
 	        /**
 	         * @implements
-	         * see {module:echarts/CoodinateSystem}
+	         * see {module:echarts3/CoodinateSystem}
 	         */
 	        convertFromPixel: zrUtil.curry(doConvert, 'pointToData'),
 
 	        /**
 	         * @implements
-	         * see {module:echarts/CoodinateSystem}
+	         * see {module:echarts3/CoodinateSystem}
 	         */
 	        containPoint: function (point) {
 	            return this.getViewRectAfterRoam().contain(point[0], point[1]);
@@ -36363,8 +36363,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:echarts/component/helper/MapDraw
-	     * @param {module:echarts/ExtensionAPI} api
+	     * @alias module:echarts3/component/helper/MapDraw
+	     * @param {module:echarts3/ExtensionAPI} api
 	     * @param {boolean} updateGroup
 	     */
 	    function MapDraw(api, updateGroup) {
@@ -36672,7 +36672,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var interactionMutex = __webpack_require__(184);
 
 	    /**
-	     * @alias module:echarts/component/helper/RoamController
+	     * @alias module:echarts3/component/helper/RoamController
 	     * @constructor
 	     * @mixin {module:zrender/mixin/Eventful}
 	     *
@@ -37733,7 +37733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var completeDimensions = __webpack_require__(110);
 
 	    /**
-	     * @constructor module:echarts/data/Tree~TreeNode
+	     * @constructor module:echarts3/data/Tree~TreeNode
 	     * @param {string} name
 	     * @param {module:echarts/data/Tree} hostTree
 	     */
@@ -38000,7 +38000,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias module:echarts/data/Tree
+	     * @alias module:echarts3/data/Tree
 	     * @param {module:echarts/model/Model} hostModel
 	     * @param {Array.<Object>} levelOptions
 	     */
@@ -38213,7 +38213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // Caution:
 	    // In most case, either list or its shallow clones (see list.cloneShallow)
-	    // is active in echarts process. So considering heap memory consumption,
+	    // is active in echarts3 process. So considering heap memory consumption,
 	    // we do not clone tree or graph, but share them among list and its shallow clones.
 	    // But in some rare case, we have to keep old list (like do animation in chart). So
 	    // please take care that both the old list and the new list share the same tree/graph.
@@ -41496,7 +41496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return '_EC_' + id;
 	    }
 	    /**
-	     * @alias module:echarts/data/Graph
+	     * @alias module:echarts3/data/Graph
 	     * @constructor
 	     * @param {boolean} directed
 	     */
@@ -41824,7 +41824,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	    /**
-	     * @alias module:echarts/data/Graph.Node
+	     * @alias module:echarts3/data/Graph.Node
 	     */
 	    function Node(id, dataIndex) {
 	        /**
@@ -41897,7 +41897,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 图边
-	     * @alias module:echarts/data/Graph.Edge
+	     * @alias module:echarts3/data/Graph.Edge
 	     * @param {module:echarts/data/Graph.Node} n1
 	     * @param {module:echarts/data/Graph.Node} n2
 	     * @param {number} [dataIndex=-1]
@@ -42375,7 +42375,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return !isPointNaN(pts[0]) && !isPointNaN(pts[1]);
 	    }
 	    /**
-	     * @alias module:echarts/component/marker/LineDraw
+	     * @alias module:echarts3/component/marker/LineDraw
 	     * @constructor
 	     */
 	    function LineDraw(ctor) {
@@ -42632,7 +42632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * @constructor
 	     * @extends {module:zrender/graphic/Group}
-	     * @alias {module:echarts/chart/helper/Line}
+	     * @alias {module:echarts3/chart/helper/Line}
 	     */
 	    function Line(lineData, idx, seriesScope) {
 	        graphic.Group.call(this);
@@ -45680,8 +45680,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var Axis = __webpack_require__(100);
 
 	    /**
-	     * @constructor module:echarts/coord/parallel/ParallelAxis
-	     * @extends {module:echarts/coord/Axis}
+	     * @constructor module:echarts3/coord/parallel/ParallelAxis
+	     * @extends {module:echarts3/coord/Axis}
 	     * @param {string} dim
 	     * @param {*} scale
 	     * @param {Array.<number>} coordExtent
@@ -45989,7 +45989,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * The code of this feature is put on AxisModel but not ParallelAxis,
-	         * because axisModel can be alive after echarts updating but instance of
+	         * because axisModel can be alive after echarts3 updating but instance of
 	         * ParallelAxis having been disposed. this._activeInterval should be kept
 	         * when action dispatched (i.e. legend click).
 	         *
@@ -46374,7 +46374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var baseUID = 0;
 
 	    /**
-	     * @alias module:echarts/component/helper/BrushController
+	     * @alias module:echarts3/component/helper/BrushController
 	     * @constructor
 	     * @mixin {module:zrender/mixin/Eventful}
 	     * @event module:echarts/component/helper/BrushController#brush
@@ -47785,7 +47785,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            line.useStyle(zrUtil.extend(lineStyle, {
 	                fill: null,
-	                // lineStyle.color have been set to itemVisual in module:echarts/visual/seriesColor.
+	                // lineStyle.color have been set to itemVisual in module:echarts3/visual/seriesColor.
 	                stroke: data.getItemVisual(dataIndex, 'color'),
 	                // lineStyle.opacity have been set to itemVisual in parallelVisual.
 	                opacity: data.getItemVisual(dataIndex, 'opacity')
@@ -47911,7 +47911,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Init a graph data structure from data in option series
 	         *
-	         * @param  {Object} option  the object used to config echarts view
+	         * @param  {Object} option  the object used to config echarts3 view
 	         * @return {module:echarts/data/List} storage initial data
 	         */
 	        getInitialData: function (option) {
@@ -48806,7 +48806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * @see <https://en.wikipedia.org/wiki/Box_plot>
 	         * The meanings of 'min' and 'max' depend on user,
-	         * and echarts do not need to know it.
+	         * and echarts3 do not need to know it.
 	         * @readOnly
 	         */
 	        defaultValueDimensions: ['min', 'Q1', 'median', 'Q3', 'max'],
@@ -49016,7 +49016,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias {module:echarts/chart/helper/WhiskerBox}
+	     * @alias {module:echarts3/chart/helper/WhiskerBox}
 	     * @param {module:echarts/data/List} data
 	     * @param {number} idx
 	     * @param {Function} styleUpdater
@@ -49132,7 +49132,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * @constructor
-	     * @alias module:echarts/chart/helper/WhiskerBoxDraw
+	     * @alias module:echarts3/chart/helper/WhiskerBoxDraw
 	     */
 	    function WhiskerBoxDraw(styleUpdater) {
 	        this.group = new graphic.Group();
@@ -50543,7 +50543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * @constructor
 	     * @extends {module:zrender/graphic/Group}
-	     * @alias {module:echarts/chart/helper/Line}
+	     * @alias {module:echarts3/chart/helper/Line}
 	     */
 	    function EffectLine(lineData, idx, seriesScope) {
 	        graphic.Group.call(this);
@@ -50730,7 +50730,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * @constructor
 	     * @extends {module:zrender/graphic/Group}
-	     * @alias {module:echarts/chart/helper/Polyline}
+	     * @alias {module:echarts3/chart/helper/Polyline}
 	     */
 	    function Polyline(lineData, idx, seriesScope) {
 	        graphic.Group.call(this);
@@ -50823,7 +50823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * @constructor
 	     * @extends {module:echarts/chart/helper/EffectLine}
-	     * @alias {module:echarts/chart/helper/Polyline}
+	     * @alias {module:echarts3/chart/helper/Polyline}
 	     */
 	    function EffectPolyline(lineData, idx, seriesScope) {
 	        EffectLine.call(this, lineData, idx, seriesScope);
@@ -51499,7 +51499,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * @file defines echarts Heatmap Chart
+	 * @file defines echarts3 Heatmap Chart
 	 * @author Ovilia (me@zhangwenli.com)
 	 * Inspired by https://github.com/mourner/simpleheat
 	 *
@@ -52890,8 +52890,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var Axis = __webpack_require__(100);
 
 	    /**
-	     * @constructor  module:echarts/coord/single/SingleAxis
-	     * @extends {module:echarts/coord/Axis}
+	     * @constructor  module:echarts3/coord/single/SingleAxis
+	     * @extends {module:echarts3/coord/Axis}
 	     * @param {string} dim
 	     * @param {*} scale
 	     * @param {Array.<number>} coordExtent
@@ -52967,14 +52967,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Convert the local coord(processed by dataToCoord())
 	         * to global coord(concrete pixel coord).
-	         * designated by module:echarts/coord/single/Single.
+	         * designated by module:echarts3/coord/single/Single.
 	         * @type {Function}
 	         */
 	        toGlobalCoord: null,
 
 	        /**
 	         * Convert the global coord to local coord.
-	         * designated by module:echarts/coord/single/Single.
+	         * designated by module:echarts3/coord/single/Single.
 	         * @type {Function}
 	         */
 	        toLocalCoord: null
@@ -53295,7 +53295,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    __webpack_require__(302);
 
 	    // CartesianAxisPointer is not supposed to be required here. But consider
-	    // echarts.simple.js and online build tooltip, which only require gridSimple,
+	    // echarts3.simple.js and online build tooltip, which only require gridSimple,
 	    // CartesianAxisPointer should be able to required somewhere.
 	    __webpack_require__(304);
 
@@ -53372,8 +53372,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {Object|Array.<number>|Function} [payload.position] Tooltip position,
 	     *        which can be specified in dispatchAction
 	     * @param {module:echarts/model/Global} ecModel
-	     * @param {module:echarts/ExtensionAPI} api
-	     * @return {Object} content of event obj for echarts.connect.
+	     * @param {module:echarts3/ExtensionAPI} api
+	     * @return {Object} content of event obj for echarts3.connect.
 	     */
 	    function axisTrigger(payload, ecModel, api) {
 	        var currTrigger = payload.currTrigger;
@@ -53478,7 +53478,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var payloadBatch = payloadInfo.payloadBatch;
 	        var snapToValue = payloadInfo.snapToValue;
 
-	        // Fill content of event obj for echarts.connect.
+	        // Fill content of event obj for echarts3.connect.
 	        // By defualt use the first involved series data as a sample to connect.
 	        if (payloadBatch[0] && outputFinder.seriesIndex == null) {
 	            zrUtil.extend(outputFinder, payloadBatch[0]);
@@ -54239,7 +54239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Base axis pointer class in 2D.
-	     * Implemenents {module:echarts/component/axis/IAxisPointer}.
+	     * Implemenents {module:echarts3/component/axis/IAxisPointer}.
 	     */
 	    function BaseAxisPointer () {
 	    }
@@ -56695,7 +56695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            else {
 	                // Only one graphic instance can be instantiated. (We dont
-	                // want that too many views are created in echarts._viewMap)
+	                // want that too many views are created in echarts3._viewMap)
 	                option.graphic = [option.graphic[0]];
 	            }
 	        }
@@ -58896,7 +58896,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias module:echarts/component/tooltip/TooltipContent
+	     * @alias module:echarts3/component/tooltip/TooltipContent
 	     * @constructor
 	     */
 	    function TooltipContent(container, api) {
@@ -59065,7 +59065,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    __webpack_require__(342);
 
-	    // For reducing size of echarts.min, barLayoutPolar is required by polar.
+	    // For reducing size of echarts3.min, barLayoutPolar is required by polar.
 	    __webpack_require__(1).registerLayout(zrUtil.curry(__webpack_require__(343), 'bar'));
 
 	    // Polar view
@@ -59239,7 +59239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var AngleAxis = __webpack_require__(335);
 
 	    /**
-	     * @alias {module:echarts/coord/polar/Polar}
+	     * @alias {module:echarts3/coord/polar/Polar}
 	     * @constructor
 	     * @param {string} name
 	     */
@@ -61275,7 +61275,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} option
 	         * @param {Array.<string>} stateList
 	         * @param {Function} [supplementVisualOption]
-	         * @return {Object} visualMappings <state, <visualType, module:echarts/visual/VisualMapping>>
+	         * @return {Object} visualMappings <state, <visualType, module:echarts3/visual/VisualMapping>>
 	         */
 	        createVisualMappings: function (option, stateList, supplementVisualOption) {
 	            var visualMappings = {};
@@ -61344,7 +61344,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * @param {Array.<string>} stateList
-	         * @param {Object} visualMappings <state, Object.<visualType, module:echarts/visual/VisualMapping>>
+	         * @param {Object} visualMappings <state, Object.<visualType, module:echarts3/visual/VisualMapping>>
 	         * @param {module:echarts/data/List} list
 	         * @param {Function} getValueState param: valueOrIndex, return: state.
 	         * @param {object} [scope] Scope for getValueState
@@ -61412,7 +61412,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // Key of the first level is brushType: `line`, `rect`, `polygon`.
 	    // Key of the second level is chart element type: `point`, `rect`.
-	    // See moudule:echarts/component/helper/BrushController
+	    // See moudule:echarts3/component/helper/BrushController
 	    // function param:
 	    //      {Object} itemLayout fetch from data.getItemLayout(dataIndex)
 	    //      {Object} selectors {point: selector, rect: selector, ...}
@@ -62046,7 +62046,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * Current activated brush type.
 	         * If null, brush is inactived.
-	         * see module:echarts/component/helper/BrushController
+	         * see module:echarts3/component/helper/BrushController
 	         * @readOnly
 	         * @type {string}
 	         */
@@ -62054,7 +62054,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * Current brush opt.
-	         * see module:echarts/component/helper/BrushController
+	         * see module:echarts3/component/helper/BrushController
 	         * @readOnly
 	         * @type {Object}
 	         */
@@ -62104,7 +62104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * see module:echarts/component/helper/BrushController
+	         * see module:echarts3/component/helper/BrushController
 	         * @param {Object} brushOption
 	         */
 	        setBrushOption: function (brushOption) {
@@ -66738,7 +66738,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        defaultOption: {
 	            align: 'auto',          // 'auto', 'left', 'right', 'top', 'bottom'
 	            calculable: false,      // This prop effect default component type determine,
-	                                    // See echarts/component/visualMap/typeDefaulter.
+	                                    // See echarts3/component/visualMap/typeDefaulter.
 	            range: null,            // selected range. In default case `range` is [min, max]
 	                                    // and can auto change along with modification of min max,
 	                                    // util use specifid a range.
@@ -68764,7 +68764,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            splitNumber: 5,             // If set to 5, auto split five pieces equally.
 	                                        // If set to 0 and component type not set, component type will be
 	                                        // determined as "continuous". (It is less reasonable but for ec2
-	                                        // compatibility, see echarts/component/visualMap/typeDefaulter)
+	                                        // compatibility, see echarts3/component/visualMap/typeDefaulter)
 	            selectedMode: 'multiple',   // Can be 'multiple' or 'single'.
 	            itemGap: 10,                // The gap between two items, in px.
 	            hoverLink: true,            // Enable hover highlight.
@@ -72089,8 +72089,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Extend axis 2d
-	     * @constructor module:echarts/coord/cartesian/Axis2D
-	     * @extends {module:echarts/coord/cartesian/Axis}
+	     * @constructor module:echarts3/coord/cartesian/Axis2D
+	     * @extends {module:echarts3/coord/cartesian/Axis}
 	     * @param {string} dim
 	     * @param {*} scale
 	     * @param {Array.<number>} coordExtent
@@ -73042,7 +73042,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * @alias {module:echarts/component/toolbox/feature/DataView}
+	     * @alias {module:echarts3/component/toolbox/feature/DataView}
 	     * @constructor
 	     * @param {module:echarts/model/Model} model
 	     */
@@ -73278,7 +73278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    // Use dataZoomSelect
 	    __webpack_require__(420);
 
-	    // Spectial component id start with \0ec\0, see echarts/model/Global.js~hasInnerId
+	    // Spectial component id start with \0ec\0, see echarts3/model/Global.js~hasInnerId
 	    var DATA_ZOOM_ID_BASE = '\0_ec_\0toolbox-dataZoom_';
 
 	    function DataZoom(model, ecModel, api) {

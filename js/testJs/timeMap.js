@@ -115,8 +115,6 @@ option = {
         backgroundColor: '#1b1b1b',
         color: ['gold','aqua','lime'],
         title : {
-            text: '模拟迁徙',
-            subtext:'数据纯属虚构，如有雷同，不胜荣幸',
             x:'center',
             textStyle : {
                 color: '#fff'
@@ -146,8 +144,8 @@ option = {
             roam: true,
             itemStyle: {
                 normal: {
-                    areaColor: '#323c48',//地图颜色
-                    borderColor: '#404a59'//地图轮廓颜色
+                    areaColor: '#1B1B1B',//地图颜色
+                    borderColor: '#3978C8'//地图轮廓颜色
                 },
                 emphasis: {
                     areaColor: '#2a333d'//地图区域激活颜色
@@ -163,8 +161,7 @@ option = {
         legend: {
             x: 'left',
             selectedMode: "single",
-            data: ['南京',],
-//                        '苏州', '无锡'],
+            data: ['南京','苏州', '无锡'],
             selected: {
                 '苏州': false, '无锡': false
             }
@@ -209,32 +206,119 @@ option = {
                     }
                 }
             },
-//                    {name: '苏州', type: 'lines',coordinateSystem: 'geo', zlevel: 1},
-//                    {name: '苏州', type: 'effectScatter',coordinateSystem: 'geo', zlevel: 2},
-//                    {name: '无锡', type: 'lines',coordinateSystem: 'geo', zlevel: 1},
-//                    {name: '无锡', type: 'effectScatter',coordinateSystem: 'geo', zlevel: 2}
+            {
+                name: '苏州',
+                type: 'lines',
+                coordinateSystem: 'geo',
+                zlevel: 1,
+                smooth: false,
+                symbol: ['none', 'arrow'],//起始点标志，终点标志
+                effect: {
+                    show: true,
+                    period: 5,
+                    trailLength: 0.7,
+                    color: '#fff',
+                    symbolSize: 3
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1,
+                        curveness: 0.1,
+                        opacity: 1
+                    }
+                }
+            },
+            {
+                name: '苏州',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                symbolSize: 13,
+                zlevel: 2,
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                }
+            },
+            {
+                name: '无锡',
+                type: 'lines',
+                coordinateSystem: 'geo',
+                zlevel: 1,
+                smooth: false,
+                symbol: ['none', 'arrow'],//起始点标志，终点标志
+                effect: {
+                    show: true,
+                    period: 5,
+                    trailLength: 0.7,
+                    color: '#fff',
+                    symbolSize: 3
+                },
+                lineStyle: {
+                    normal: {
+                        width: 1,
+                        curveness: 0.1,
+                        opacity: 1
+                    }
+                }
+            },
+            {
+                name: '无锡',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                symbolSize: 13,
+                zlevel: 2,
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                }
+            },
+
         ]
     },
     options: [
         {
-            title : {text: '2014江苏省'},
+            title : {text: '2014江苏省城际流向流量图'},
             series : [
+                {data: dataMap.dataNJLines['2014']},
+                {data: dataMap.dataNJScatter['2014']},
+                {data: dataMap.dataNJLines['2014']},
+                {data: dataMap.dataNJScatter['2014']},
                 {data: dataMap.dataNJLines['2014']},
                 {data: dataMap.dataNJScatter['2014']},
 
             ]
         },
         {
-            title : {text: '2015江苏省'},
+            title : {text: '2015江苏省城际流向流量图'},
             series : [
+                {data: dataMap.dataNJLines['2015']},
+                {data: dataMap.dataNJScatter['2015']},
+                {data: dataMap.dataNJLines['2015']},
+                {data: dataMap.dataNJScatter['2015']},
                 {data: dataMap.dataNJLines['2015']},
                 {data: dataMap.dataNJScatter['2015']},
 
             ]
         },
         {
-            title : {text: '2016江苏省'},
+            title : {text: '2016江苏省城际流向流量图'},
             series : [
+                {data: dataMap.dataNJLines['2016']},
+                {data: dataMap.dataNJScatter['2016']},
+                {data: dataMap.dataNJLines['2016']},
+                {data: dataMap.dataNJScatter['2016']},
                 {data: dataMap.dataNJLines['2016']},
                 {data: dataMap.dataNJScatter['2016']},
 

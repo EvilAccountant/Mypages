@@ -222,14 +222,12 @@
                                                 }
                                             }
                                         },
-                                        data: function (myData) {
-                                            return myData[1];
-                                        },
+                                        data: myData[1],
                                     },
 //                                    点
                                     markPoint : {
                                         symbol:'circle',
-                                        symbolSize : 5,
+                                        symbolSize : 10,
                                         effect : {
                                             show: true,
                                             shadowBlur : 0
@@ -245,80 +243,6 @@
                                         data : myData[2]
                                     }
                                 },
-//                                {
-//                                    name: '南京市',
-//                                    type: 'map',
-//                                    roam: true,
-//                                    hoverable: false,
-//                                    mapType: '江苏',
-//                                    itemStyle:{
-//                                        normal:{
-//                                            borderColor:'rgba(100,149,237,1)',
-//                                            borderWidth:0.5,
-//                                            areaStyle:{
-//                                                color: '#1b1b1b'
-//                                            }
-//                                        }
-//                                    },
-//                                    data:[],
-//                                    geoCoord: {
-//                                        '苏州市': [120.619585,31.299379],
-//                                        '南京市': [118.767413,32.041544],
-//                                        '无锡市': [120.301663,31.574729],
-//                                        '南通市': [120.864608,32.016212],
-//                                        '常州市': [119.946973,31.772752],
-//                                        '徐州市': [117.184811,34.261792],
-//                                        '盐城市': [120.139998,33.377631],
-//                                        '扬州市': [119.421003,32.393159],
-//                                        '泰州市': [119.915176,32.484882],
-//                                        '镇江市': [119.452753,32.204402],
-//                                        '淮安市': [119.021265,33.597506],
-//                                        '连云港市': [119.178821,34.600018],
-//                                        '宿迁市': [118.275162,33.963008]
-//                                    },
-//                                    //线
-////                                    markLine : {
-////                                        smooth:true,
-////                                        effect : {
-////                                            show: true,
-////                                            scaleSize: 1,
-////                                            period: 30,
-////                                            color: '#fff',
-////                                            shadowBlur: 10,
-////                                        },
-////                                        itemStyle : {
-////                                            normal: {
-////                                                borderWidth:1,
-////                                                label: {
-////                                                    show: false
-////                                                },
-////                                                lineStyle: {
-////                                                    type: 'solid',
-////                                                    shadowBlur: 10
-////                                                }
-////                                            }
-////                                        },
-////                                        data : dataMap.dataNJLines['2014']
-////                                    },
-//                                    //点
-//                                    markPoint : {
-//                                        symbol:'circle',
-//                                        symbolSize : 5,
-//                                        effect : {
-//                                            show: true,
-//                                            shadowBlur : 0
-//                                        },
-//                                        itemStyle:{
-//                                            normal:{
-//                                                label:{show:false}
-//                                            },
-//                                            emphasis: {
-//                                                label:{position:'top'}
-//                                            }
-//                                        },
-//                                        data : dataMap.dataNJPoint['2014']
-//                                    }
-//                                },
                             ]
                         },
                         {

@@ -17,36 +17,29 @@ option = {
         trigger: 'axis'
     },
     xAxis: {
-        name:'attack type',
+        name:'',
         data: ['南京', '苏州', '无锡', '南通', '徐州']
     },
     yAxis: {
-        name:'shell'
+        name:''
     },
-    series: [{
-        name:'南京',
-        type: 'line',
-        data:[220, 182, 171, 214, 210, 310, 290,270]
-    },
+    series: [
         {
-            name:'苏州',
+            name:'2014',
             type: 'line',
-            data:[200, 162, 191, 204, 230, 290, 310,290]
+            data:[1.639, 1.594, 1.583, 1.409, 1.528]
         },
         {
-            name:'无锡',
+            name:'2015',
             type: 'line',
-            data:[180, 142, 151, 234, 250, 250, 250,310]
+            data:[1.672, 1.642, 1.631, 1.451, 1.467]
+        },
+        {
+            name:'2016',
+            type: 'line',
+            data:[1.771, 1.700, 1.614, 1.530, 1.482]
         }
-        ,{
-            name:'南通',
-            type: 'line',
-            data:[220, 162, 131, 194, 270, 270, 290,270]
-        },{
-            name:'徐州',
-            type: 'line',
-            data:[160, 182, 171, 174, 290, 330, 270,250]
-        }]
+    ]
 };
 
 myChart.setOption(option);

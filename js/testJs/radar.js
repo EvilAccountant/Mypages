@@ -15,12 +15,12 @@ option = {
     radar: {
         // shape: 'circle',
         indicator: [
-            { name: '人口', max: 6500},
-            { name: '高速里程', max: 16000},
-            { name: '公路里程', max: 30000},
-            { name: '货车', max: 38000},
-            { name: '客车', max: 52000},
-            { name: 'GDP', max: 25000}
+            { name: '人口', max: 1},
+            { name: '高速里程', max: 1},
+            { name: '公路里程', max: 1},
+            { name: '货车', max: 1},
+            { name: '客车', max: 1},
+            { name: 'GDP', max: 1}
         ]
     },
     series: [{
@@ -29,7 +29,7 @@ option = {
         // areaStyle: {normal: {}},
         data : [
             {
-                value : [4300, 10000, 28000, 35000, 50000, 19000],
+                value : [0.95, 0.96, 0.91, 0.5, 0.94, 0.93],
             },
         ]
     }]

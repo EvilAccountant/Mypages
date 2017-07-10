@@ -12,6 +12,7 @@
     <script src="js/jquery/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/echarts3/echarts.min.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <script src="js/map/jiangsu.js"></script>
     <style>
         *{
@@ -20,40 +21,41 @@
         }
 
         .chart-up{
-            height: 470px;
+            height: 370px;
             width: 100%;
             margin-bottom: 20px;
-            background-color: #c9302c;
+            background-color: #1B1B1B;
         }
 
         .chart-button{
-            height: 400px;
+            height: 300px;
             width: 100%;
+            background-color: #1B1B1B;
         }
 
         .container-left {
-            min-height: 890px;
+            min-height: 690px;
             width: 23%;
-            background-color: #1B1B1B;
-            margin-top: 10px;
+            background-color: #FFFFFF;
+            margin-top: 20px;
             margin-left: 20px;
             margin-right: 20px;
             float: left;
         }
 
         .container-right {
-            min-height: 890px;
+            min-height: 690px;
             width: 23%;
-            background-color: #1B1B1B;
-            margin-top: 10px;
+            background-color: #FFFFFF;
+            margin-top: 20px;
             margin-left: 20px;
             float: left;
         }
 
         .container-center{
-            min-height: 890px;
+            min-height: 690px;
             width: 50%;
-            margin-top: 10px;
+            margin-top: 20px;
             float: left;
         }
 
@@ -90,7 +92,7 @@
         <div style="width: 100%;">
             <div class="container-left">
                 <div class="chart-up"></div>
-                <div class="chart-button"></div>
+                <div id="chord" class="chart-button"></div>
             </div>
             <div class="container-center" id="timeMap"></div>
             <div class="container-right">
@@ -100,9 +102,9 @@
         </div>
     </div>
 
-
-    <script src="js/testJs/timeMap.js"></script>
+    <script src="js/testJs/timeMapE2.js"></script>
     <script src="js/testJs/radar.js"></script>
     <script src="js/testJs/lines.js"></script>
+    <script src="js/testJs/chord.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 
                 var dataMap={};
 
-                dataMap.dataNJLines = {
+                dataMap.NJLines = {
                     2016:[
                         [{name:'南京市', smoothness:0.1}, {name:'苏州市',value:100}],
                         [{name:'南京市', smoothness:0.1}, {name:'无锡市',value:100}],
@@ -71,7 +71,7 @@
                     ],
                 }
 
-                dataMap.dataNJPoint={
+                dataMap.NJPoint={
                     2016:[
                         {name:'苏州市',value:100},
                         {name:'南京市',value:100},
@@ -119,8 +119,6 @@
                     ],
                 }
 
-                var myData = [[],dataMap.dataNJLines['2015'],dataMap.dataNJPoint['2015']];
-                
                 var option = {
                     timeline:{
                         data:[
@@ -184,7 +182,7 @@
                                             }
                                         }
                                     },
-                                    data:myData[0],
+                                    data:[],
                                     geoCoord: {
                                         '苏州市': [120.619585,31.299379],
                                         '南京市': [118.767413,32.041544],
@@ -222,7 +220,7 @@
                                                 }
                                             }
                                         },
-                                        data: myData[1],
+                                        data: dataMap.NJLines['2014'],
                                     },
 //                                    点
                                     markPoint : {
@@ -240,7 +238,7 @@
                                                 label:{position:'top'}
                                             }
                                         },
-                                        data : myData[2]
+                                        data : dataMap.NJPoint['2014']
                                     }
                                 },
                             ]
@@ -248,15 +246,19 @@
                         {
                             title : {'text':'2015全国宏观经济指标'},
                             series : [
-                                {data:myData},
-//                                {'data': dataMap.dataNJPoint['2015']},
+                                {
+                                    markLine:{data:dataMap.NJLines['2015']},
+                                    markPoint:{data:dataMap.NJPoint['2015']}
+                                },
                             ]
                         },
                         {
                             title : {'text':'2016全国宏观经济指标'},
                             series : [
-                                {data:[[],dataMap.dataNJLines['2016'],dataMap.dataNJPoint['2016']]},
-//                                {'data': dataMap.dataNJPoint['2016']},
+                                {
+                                    markLine:{data:dataMap.NJLines['2016']},
+                                    markPoint:{data:dataMap.NJPoint['2016']}
+                                },
                             ]
                         }
                     ]

@@ -5,7 +5,7 @@ var myChart = echarts.init(document.getElementById('timeMap'));
 
 var dataMap = {};
 
-dataMap.dataNJLines = {
+dataMap.NJLines = {
     2016:[
         [{name: '南京市', coord: [118.767413,32.041544]}, {name: '苏州市', value: 100, coord: [120.619585,31.299379]}],
         [{name: '南京市', coord: [118.767413,32.041544]}, {name: '无锡市', value: 50, coord: [120.301663,31.574729]}],
@@ -291,11 +291,11 @@ option = {
         {
             title : {text: '2014江苏省城际流向流量图'},
             series : [
-                {data: dataMap.dataNJLines['2014']},
+                {data: dataMap.NJLines['2014']},
                 {data: dataMap.dataNJScatter['2014']},
-                {data: dataMap.dataNJLines['2014']},
+                {data: dataMap.NJLines['2014']},
                 {data: dataMap.dataNJScatter['2014']},
-                {data: dataMap.dataNJLines['2014']},
+                {data: dataMap.NJLines['2014']},
                 {data: dataMap.dataNJScatter['2014']},
 
             ]
@@ -303,11 +303,11 @@ option = {
         {
             title : {text: '2015江苏省城际流向流量图'},
             series : [
-                {data: dataMap.dataNJLines['2015']},
+                {data: dataMap.NJLines['2015']},
                 {data: dataMap.dataNJScatter['2015']},
-                {data: dataMap.dataNJLines['2015']},
+                {data: dataMap.NJLines['2015']},
                 {data: dataMap.dataNJScatter['2015']},
-                {data: dataMap.dataNJLines['2015']},
+                {data: dataMap.NJLines['2015']},
                 {data: dataMap.dataNJScatter['2015']},
 
             ]
@@ -315,11 +315,11 @@ option = {
         {
             title : {text: '2016江苏省城际流向流量图'},
             series : [
-                {data: dataMap.dataNJLines['2016']},
+                {data: dataMap.NJLines['2016']},
                 {data: dataMap.dataNJScatter['2016']},
-                {data: dataMap.dataNJLines['2016']},
+                {data: dataMap.NJLines['2016']},
                 {data: dataMap.dataNJScatter['2016']},
-                {data: dataMap.dataNJLines['2016']},
+                {data: dataMap.NJLines['2016']},
                 {data: dataMap.dataNJScatter['2016']},
 
             ]

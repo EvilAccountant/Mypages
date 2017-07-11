@@ -303,7 +303,7 @@ require(
                     '2014','2015','2016'
                 ],
                 autoPlay : true,
-                playInterval : 3000
+                playInterval : 8000
             },
             options:[
                 {
@@ -321,10 +321,10 @@ require(
                         formatter: '{b}'
                     },
                     legend: {
-                        orient: 'vertical',
-                        x:'left',
+                        orient: 'vertical',//垂直排列
+                        x:'right',
                         data:['南京市', '苏州市', '宿迁市'],
-                        selectedMode: 'single',
+                        selectedMode: 'single',//单选模式
                         selected:{
                             '苏州市' : false,
                             '宿迁市' : false,
@@ -351,8 +351,8 @@ require(
                             mapType: '江苏',
                             itemStyle:{
                                 normal:{
-                                    borderColor:'rgba(100,149,237,1)',
-                                    borderWidth:0.5,
+                                    borderColor:'#418AE9',
+                                    borderWidth:1,
                                     areaStyle:{
                                         color: '#1b1b1b'
                                     }

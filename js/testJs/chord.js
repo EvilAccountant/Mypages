@@ -264,14 +264,10 @@ require(
                 data:[
                     '2014','2015','2016'
                 ],
-                x:40,
-                y:255,
-                width:'250px',
+                x:'5%',
+                width:'80%',
                 autoPlay : true,
-                playInterval : 3000,
-                controlStyle:{
-                    itemGap:1,
-                }
+                playInterval : 8000,
             },
             options:[
                 {
@@ -300,6 +296,7 @@ require(
                             type:'chord',
                             sort : 'ascending',
                             sortSub : 'descending',
+                            center : ['50%', '50%'],
                             showScale : false,
                             itemStyle : {
                                 normal : {

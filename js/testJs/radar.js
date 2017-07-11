@@ -5,8 +5,13 @@
 var myChart = echarts.init(document.getElementById('radar'));
 
 option = {
+    backgroundColor: '#000000',//背景色
     title: {
-        text: '相关性分析'
+        text: '相关性分析',
+        textStyle:{
+            fontSize:15,
+            color:"#ffffff"
+        },
     },
     tooltip: {},
     legend: {
@@ -26,7 +31,23 @@ option = {
     series: [{
         name: '相关性分析',
         type: 'radar',
-        // areaStyle: {normal: {}},
+        itemStyle:{
+          normal:{
+              color:'##EFCE56'//点颜色
+          }
+        },
+        lineStyle:{
+            normal:{
+                color:'#EFCE56',//线颜色
+                width:1,
+                type:'solid'
+            }
+        },
+        areaStyle:{
+          normal:{
+              color:'#EFCE56'//包裹区域颜色
+          }
+        },
         data : [
             {
                 value : [0.95, 0.96, 0.91, 0.5, 0.94, 0.93],

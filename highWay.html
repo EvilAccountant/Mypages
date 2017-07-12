@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>高速公路稽查逃费分析</title>
     <script src="js/jquery/jquery-3.2.1.min.js"></script>
-    <script src="js/echarts3/echarts.min.js"></script>
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <style>
         *{
@@ -22,72 +21,83 @@
         .top{
             height: 60px;
             width: 100%;
-            background-color: #1b1b1b;
+            background-color: #12101B;
         }
 
         .left-container{
             width: 34%;
             height: 840px;
-            background-color: #4cae4c;
+            background-color: #12101B;
             float: left;
+        }
+
+        .number-pad{
+            height: 20%;
+            width: 100%;
+            background-color: #12101B;
+        }
+
+        .highway-container{
+            height: 80%;
+            width: 100%;
         }
 
         .right-container{
             width: 66%;
             height: 840px;
-            background-color: #2aabd2;
+            background-color: #12101B;
             float: right;
         }
 
         .bottom-container{
             height: 40%;
-            background-color: #c9302c;
+            background-color: #181729;
+            border-radius:10px 0;
         }
+
 
         .top-container{
             height: 60%;
-            background-color: #122b40;
+            background-color: #12101B;
         }
 
         .top-charts{
             height: 50%;
             width: 50%;
-            background-color: #eb9316;
+            background-color: #12101B;
             float: left;
         }
 
         .button-charts{
-            width: 25%;
-            height: 90%;
-            background-color: #2b669a;
-            float: left;
+            width: 100%;
+            height: 100%;
         }
 
     </style>
 </head>
 <body class="myContainer">
     <div class="top"></div>
-    <div class="left-container"></div>
+    <div class="left-container">
+        <div class="number-pad"></div>
+        <object class="highway-container" type="text/x-scriptlet" data="shanxiMap.html"></object>
+        <!--<div class="highway-container" id="highway"></div>-->
+    </div>
     <div class="right-container">
         <div class="top-container">
-            <div class="top-charts"></div>
-            <div class="top-charts"></div>
-            <div class="top-charts"></div>
-            <div class="top-charts"></div>
+            <div class="top-charts" id="onLeft"></div>
+            <div class="top-charts" id="onRight"></div>
+            <div class="top-charts" id="lowerLeft"></div>
+            <div class="top-charts" id="lowerRight"></div>
         </div>
         <div class="bottom-container">
-            <div style="height: 10%">
-                <div style="float: left">本月逃费统计</div>
-                <div style="float: right">
-                    <button type="button">方式</button>
-                    <button type="button">金额</button>
-                </div>
-            </div>
-            <div class="button-charts"></div>
-            <div class="button-charts"></div>
-            <div class="button-charts"></div>
-            <div class="button-charts"></div>
+            <div class="button-charts" id="pieCharts"></div>
         </div>
     </div>
+
+    <script src="js/highway/onLeft.js"></script>
+    <script src="js/highway/onRight.js"></script>
+    <script src="js/highway/lowerLeft.js"></script>
+    <script src="js/highway/lowerRight.js"></script>
+    <script src="js/highway/statistics.js"></script>
 </body>
 </html>

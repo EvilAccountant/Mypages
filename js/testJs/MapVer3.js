@@ -40,7 +40,8 @@ option = {
             color: '#fff'
         }
     },
-    series: [{
+    series: [
+        {
         name:'南京市',
         type:'map',
         map:'江苏',

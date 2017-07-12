@@ -58,7 +58,7 @@ require(
                 color: 'rgba(0,0,0,0)'
             }
         };
-        var radius = [40, 55];
+        var radius = [40,55];
         option = {
             legend: {
                 x : 'center',

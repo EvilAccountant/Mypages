@@ -47,7 +47,7 @@ option = {
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',
-                width:2
+                width:1
             }
         },
     },
@@ -56,7 +56,7 @@ option = {
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',
-                width:2
+                width:1
             }
         },
     },

@@ -18,7 +18,7 @@ require(
 
         option = {
             title : {
-                text: '某地区蒸发量和降水量',
+                text: '车辆重载里程',
                 textStyle:{
                     color:'#ffffff',
                     fontWeight:'normal'
@@ -27,53 +27,83 @@ require(
             tooltip : {
                 trigger: 'axis'
             },
-            legend: {
-                data:['蒸发量','降水量']
-            },
             calculable : true,
             xAxis : [
                 {
+                    name:'(km)',
                     type : 'category',
-                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    },
+                    data : ['0-50','50-100','100-150','150-200','200-250','250-300', '300+']
                 }
             ],
             yAxis : [
                 {
-                    type : 'value'
+                    name:'(辆)',
+                    type : 'value',
+                    position:'left',
+                    scale : true,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    },
                 }
             ],
             series : [
                 {
-                    name:'蒸发量',
                     type:'bar',
-                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-                    markPoint : {
-                        data : [
-                            {type : 'max', name: '最大值'},
-                            {type : 'min', name: '最小值'}
-                        ]
+                    itemStyle:{
+                        normal:{
+                            color:'#fe764f',
+                            barBorderRadius:[10, 10, 0, 0],
+                            label:{
+                                show:true,
+                                position:'top',
+                                textStyle:{
+                                    color:'#ffffff'
+                                }
+                            }
+                        },
+                        emphasis:{
+                            barBorderRadius:[10, 10, 0, 0],
+                            label:{
+                                show:true,
+                                position:'top',
+                                textStyle:{
+                                    color:'#ffffff'
+                                }
+                            }
+                        },
                     },
-                    markLine : {
-                        data : [
-                            {type : 'average', name: '平均值'}
-                        ]
-                    }
-                },
-                {
-                    name:'降水量',
-                    type:'bar',
-                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-                    markPoint : {
-                        data : [
-                            {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
-                            {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
-                        ]
-                    },
-                    markLine : {
-                        data : [
-                            {type : 'average', name : '平均值'}
-                        ]
-                    }
+                    data:[54, 274, 150, 288, 187, 156, 100],
                 }
             ]
         };

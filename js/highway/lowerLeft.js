@@ -11,7 +11,7 @@ require.config({
 require(
     [
         'echarts',
-        'echarts/chart/bar', // 加载map模块
+        'echarts/chart/line', // 加载map模块
     ],
     function (echarts) {
         // 基于准备好的dom，初始化echarts图表
@@ -19,61 +19,95 @@ require(
 
         option = {
             title : {
-                text: '本月逃费统计',
-                x: 'left',
-                y:'top',
+                text: '折返车辆',
                 textStyle:{
                     color:'#ffffff',
                     fontWeight:'normal'
                 }
             },
-            tooltip : {
-                trigger: 'axis',
-                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                }
+            dataZoom: {
+                show: true,
+                x:80,
+                y:220,
+                start : 15,
+                end : 85,
+                height:15,
+                width:400,
             },
-            legend: {
-                data:['利润', '支出', '收入']
+            tooltip : {
+                trigger: 'axis'
             },
             calculable : true,
             xAxis : [
                 {
-                    type : 'value'
+                    type : 'category',
+                    boundaryGap : false,
+                    scale : true,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    },
+                    data : [
+                        '2017/7/8 00:00','2017/7/8 04:00','2017/7/8 08:00','2017/7/8 12:00','2017/7/8 16:00','2017/7/8 20:00','2017/7/8 24:00',
+                        '2017/7/9 00:00','2017/7/9 04:00','2017/7/9 08:00','2017/7/9 12:00','2017/7/9 16:00','2017/7/9 20:00','2017/7/9 24:00',
+                        '2017/7/10 00:00','2017/7/10 04:00','2017/7/10 08:00','2017/7/10 12:00','2017/7/10 16:00','2017/7/10 20:00','2017/7/10 24:00',
+                    ]
                 }
             ],
             yAxis : [
                 {
-                    type : 'category',
-                    axisTick : {show: false},
-                    data : ['周一','周二','周三','周四','周五','周六','周日']
+                    name:'(辆)',
+                    type : 'value',
+                    scale : true,
+                    max:'250',
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    }
                 }
             ],
             series : [
                 {
-                    name:'利润',
-                    type:'bar',
-                    itemStyle : { normal: {label : {show: true, position: 'inside'}}},
-                    data:[200, 170, 240, 244, 200, 220, 210]
-                },
-                {
-                    name:'收入',
-                    type:'bar',
-                    stack: '总量',
-                    barWidth : 5,
-                    itemStyle: {normal: {
-                        label : {show: true}
-                    }},
-                    data:[320, 302, 341, 374, 390, 450, 420]
-                },
-                {
-                    name:'支出',
-                    type:'bar',
-                    stack: '总量',
-                    itemStyle: {normal: {
-                        label : {show: true, position: 'left'}
-                    }},
-                    data:[-120, -132, -101, -134, -190, -230, -210]
+                    type:'line',
+                    smooth:true,
+                    itemStyle: {
+                        normal: {
+                            areaStyle: {
+                                type: 'default',
+                            }
+                        }
+                        },
+                    data:[
+                        120, 124, 36, 80, 50, 110, 100,
+                        98, 101, 45, 76, 44, 105, 114,
+                        112, 118, 51, 82, 61, 104, 121,
+                    ]
                 }
             ]
         };

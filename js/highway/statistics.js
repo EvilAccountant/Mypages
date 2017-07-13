@@ -23,6 +23,7 @@ require(
                     position : 'center',
                     formatter : '{b}',
                     textStyle: {
+                        fontSize: 10,
                         baseline : 'bottom'
                     }
                 },
@@ -38,6 +39,7 @@ require(
                         return 100 - params.value + '%'
                     },
                     textStyle: {
+                        fontSize:16,
                         baseline : 'top'
                     }
                 }
@@ -58,14 +60,19 @@ require(
                 color: 'rgba(0,0,0,0)'
             }
         };
-        var radius = [40,55];
+        var radius = [32,42];
         option = {
             legend: {
                 x : 'center',
-                y : 'center',
+                y : 150,
+                itemGap:55,
+                itemWidth:30,
+                itemHeight:20,
+                textStyle:{
+                  color:'#ffffff'
+                },
                 data:[
-                    'GoogleMaps','Facebook','Youtube','Google+','Weixin',
-                    'Twitter', 'Skype', 'Messenger', 'Whatsapp', 'Instagram'
+                    '冲岗','U/J型','假冒绿通车','假证','记重逃费', '黑名单','换卡换牌', '混合'
                 ]
             },
             title : {
@@ -80,119 +87,95 @@ require(
             series : [
                 {
                     type : 'pie',
-                    center : ['10%', '30%'],
+                    center : ['12.5%', '32%'],
                     radius : radius,
                     x: '0%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:46, itemStyle : labelBottom},
-                        {name:'GoogleMaps', value:54,itemStyle : labelTop}
+                        {name:'冲岗', value:54,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['30%', '30%'],
+                    center : ['37.5%', '32%'],
                     radius : radius,
                     x:'20%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:56, itemStyle : labelBottom},
-                        {name:'Facebook', value:44,itemStyle : labelTop}
+                        {name:'假冒绿通车', value:44,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['50%', '30%'],
+                    center : ['62.5%', '32%'],
                     radius : radius,
                     x:'40%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:65, itemStyle : labelBottom},
-                        {name:'Youtube', value:35,itemStyle : labelTop}
+                        {name:'记重逃费', value:35,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['70%', '30%'],
+                    center : ['87.5%', '32%'],
                     radius : radius,
                     x:'60%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:70, itemStyle : labelBottom},
-                        {name:'Google+', value:30,itemStyle : labelTop}
+                        {name:'换卡换牌', value:30,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['90%', '30%'],
+                    center : ['12.5%', '75%'],
                     radius : radius,
                     x:'80%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:73, itemStyle : labelBottom},
-                        {name:'Weixin', value:27,itemStyle : labelTop}
+                        {name:'U/J型', value:27,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['10%', '70%'],
+                    center : ['37.5%', '75%'],
                     radius : radius,
                     y: '55%',   // for funnel
                     x: '0%',    // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'Twitter', value:22,itemStyle : labelTop}
+                        {name:'假证', value:22,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['30%', '70%'],
+                    center : ['62.5%', '75%'],
                     radius : radius,
                     y: '55%',   // for funnel
                     x:'20%',    // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'Skype', value:22,itemStyle : labelTop}
+                        {name:'黑名单', value:22,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
-                    center : ['50%', '70%'],
+                    center : ['87.5%', '75%'],
                     radius : radius,
                     y: '55%',   // for funnel
                     x:'40%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'Messenger', value:22,itemStyle : labelTop}
+                        {name:'混合', value:22,itemStyle : labelTop}
                     ]
                 },
-                {
-                    type : 'pie',
-                    center : ['70%', '70%'],
-                    radius : radius,
-                    y: '55%',   // for funnel
-                    x:'60%', // for funnel
-                    itemStyle : labelFromatter,
-                    data : [
-                        {name:'other', value:83, itemStyle : labelBottom},
-                        {name:'Whatsapp', value:17,itemStyle : labelTop}
-                    ]
-                },
-                {
-                    type : 'pie',
-                    center : ['90%', '70%'],
-                    radius : radius,
-                    y: '55%',   // for funnel
-                    x:'80%', // for funnel
-                    itemStyle : labelFromatter,
-                    data : [
-                        {name:'other', value:89, itemStyle : labelBottom},
-                        {name:'Instagram', value:11,itemStyle : labelTop}
-                    ]
-                }
             ]
         };
 

@@ -22,7 +22,7 @@ require(
                 trigger: 'item',
             },
             title : {
-                text: '本月逃费统计',
+                text: '车辆空载比例',
                 x: 'left',
                 y:'top',
                 textStyle:{
@@ -32,37 +32,80 @@ require(
             },
             dataRange: {
                 min: 0,
-                max: 100,
+                max: 600,
                 y: 'center',
                 text:['高','低'],           // 文本，默认为数值文本
-                color:['lightgreen','yellow'],
+                color:['#00aaff','#00ffff'],
                 calculable : true
+            },
+            dataZoom: {
+                show: true,
+                x:80,
+                y:220,
+                start : 15,
+                end : 85,
+                height:15,
+                width:400,
             },
             xAxis : [
                 {
                     type : 'value',
-                    scale : true
+                    scale : true,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    },
                 }
             ],
             yAxis : [
                 {
+                    name:'km',
                     type : 'value',
                     position:'right',
-                    scale : true
+                    scale : true,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ffffff',
+                            width:0
+                        }
+                    },
+                    axisLabel:{
+                        show:true,
+                        textStyle:{
+                            color:'#ffffff'
+                        }
+                    },
+                    splitLine:{
+                        lineStyle:{
+                            color:'#1F1D33'
+                        }
+                    },
                 }
             ],
             animation: false,
             series : [
                 {
-                    name:'scatter1',
                     type:'scatter',
-                    symbolSize:5,
+                    symbolSize:3,
                     data: (function () {
                         var d = [];
-                        var len = 500;
+                        var len = 600;
                         var value;
                         while (len--) {
-                            value = (Math.random()*100).toFixed(2) - 0;
+                            value = (Math.random()*600).toFixed(2) - 0;
                             d.push([
                                 (Math.random()*value + value).toFixed(2) - 0,
                                 (Math.random()*value).toFixed(2) - 0,

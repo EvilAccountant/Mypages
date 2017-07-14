@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>高速公路稽查逃费分析</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <script src="js/jquery/jquery-3.2.1.min.js"></script>
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <style>
@@ -17,19 +18,21 @@
             width: 100%;
             height: 100%;
             background-color: #12101B;
-            margin: 20px;
         }
 
         .top{
-            height: 40px;
-            width: 97.5%;
+            height: 43px;
+            width: 96.875%;
+            margin-top: 23px;
+            margin-left: 50px;
             background-color: #12101B;
         }
 
         .left-container{
-            width: 27.5%;
-            height: 860px;
+            width: 27.625%;
+            height: 814px;
             background-color: #12101B;
+            margin-left: 50px;
             float: left;
         }
 
@@ -64,8 +67,8 @@
             width: 60%;
             position: absolute;
             z-index: 3;
-            margin-top: 93%;
-            margin-left: 40%;
+            margin-top: 380px;
+            margin-left: 190px;
             background-image: url("img/table.png");
             background-repeat: no-repeat;
         }
@@ -80,8 +83,8 @@
         }
 
         .right-container{
-            width: 70%;
-            height: 850px;
+            width: 68%;
+            height: 814px;
             margin-top: 10px;
             background-color: #12101B;
             float: right;
@@ -133,11 +136,18 @@
 
         function changePie1() {
             document.getElementById("pieCharts1").style.visibility='hidden';
+            document.getElementById("access").className="btn btn-info btn-sm";
+
             document.getElementById("pieCharts2").style.visibility='visible';
+            document.getElementById("money").className="btn btn-info btn-sm active";
         }
         function changePie2() {
             document.getElementById("pieCharts1").style.visibility='visible';
+            document.getElementById("access").className="btn btn-info btn-sm active";
+
             document.getElementById("pieCharts2").style.visibility='hidden';
+            document.getElementById("money").className="btn btn-info btn-sm";
+
         }
     </script>
 </head>
@@ -147,16 +157,16 @@
     </div>
     <div class="left-container">
         <div class="info-pad">
-            <div class="number-pad">
+            <div>
                 <div style="color: white;font-size:18px;margin-top: 32px;margin-bottom: 32px">今日可疑逃费车辆</div>
-                <div id="thousand" class="num"></div>
+                <div id="thousand" class="num" style="margin-left: 80px"></div>
                 <div id="hundred" class="num"></div>
                 <div id="ten" class="num"></div>
                 <div id="one" class="num"></div>
                 <div style="margin-right:20px;float: left;font-size: 18px;color: white;margin-top: 48px">辆</div>
-                <div style="float: left;font-size: 16px;color: white;margin-top: 50px">
-                    环比昨日<span style="color: yellow"> ↑ 2%</span>
-                </div>
+                <!--<div style="float: left;font-size: 16px;color: white;margin-top: 50px">-->
+                    <!--环比昨日<span style="color: yellow"> ↑ 2%</span>-->
+                <!--</div>-->
             </div>
         </div>
         <div style="height: 80%;width: 100%;position: relative">
@@ -220,11 +230,12 @@
             <div class="top-charts" id="lowerRight"></div>
         </div>
         <div class="bottom-container">
+            <div style="color: white;font-size:18px;position: absolute;margin-top: 10px;margin-left: 10px">本月逃费统计</div>
             <div class="button-charts" id="pieCharts1" style="visibility: visible"></div>
             <div class="button-charts" id="pieCharts2" style="visibility: hidden"></div>
-            <div style="position: absolute;margin-left: 92%">
-                <button type="button" onclick="changePie1()" >方式</button>
-                <button type="button" onclick="changePie2()" >金额</button>
+            <div style="position: absolute;margin-left: 90%;margin-top: 10px">
+                <button id="access" type="button" class="btn btn-info btn-sm active" onclick="changePie1()">方式</button>
+                <button id="money" type="button" class="btn btn-info btn-sm" onclick="changePie2()">金额</button>
             </div>
         </div>
     </div>

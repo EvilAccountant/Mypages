@@ -7,10 +7,10 @@ var myChart = echarts.init(document.getElementById('lines'));
 option = {
     backgroundColor: '#1F3044',//背景色
     title: {
-        text: 'TOP5城市拥堵指数',
+        text: '江苏高速拥堵指数',
         x:"center",
         textStyle:{
-            fontSize:15,
+            fontSize:16,
             color:"#ffffff"
         },
     },
@@ -43,7 +43,7 @@ option = {
     },
     xAxis: {
         name:'',
-        data: ['南京', '苏州', '无锡', '南通', '徐州'],
+        data: ['京沪高速苏州段', '京沪高速无锡段', '沈海高速南通段', '京沪高速泰州段', '扬溧高速镇江段'],
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',
@@ -53,6 +53,9 @@ option = {
     },
     yAxis: {
         name:'',
+        type:'value',
+        min:1,
+        max:1.8,
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',
@@ -65,19 +68,19 @@ option = {
             name:'2014',
             type: 'line',
             symbol:'circle',
-            data:[1.639, 1.594, 1.583, 1.409, 1.528]
+            data:[1.43, 1.36, 1.33, 1.31, 1.29]
         },
         {
             name:'2015',
             type: 'line',
             symbol:'circle',
-            data:[1.672, 1.642, 1.631, 1.451, 1.467]
+            data:[1.45, 1.33, 1.33, 1.32, 1.22]
         },
         {
             name:'2016',
             type: 'line',
             symbol:'circle',
-            data:[1.771, 1.700, 1.614, 1.530, 1.482]
+            data:[1.46, 1.37, 1.36, 1.35, 1.23]
         }
     ]
 };

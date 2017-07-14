@@ -76,7 +76,7 @@ require(
                 ]
             },
             title : {
-                text: '本月逃费统计',
+                text: '',
                 x: 'left',
                 y:'top',
                 textStyle:{

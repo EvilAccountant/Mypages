@@ -5,7 +5,7 @@
 var myChart = echarts.init(document.getElementById('lines'));
 
 option = {
-    backgroundColor: '#000000',//背景色
+    backgroundColor: '#1F3044',//背景色
     title: {
         text: 'TOP5城市拥堵指数',
         x:"center",

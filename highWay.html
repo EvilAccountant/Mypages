@@ -42,7 +42,7 @@
         .num{
             width: 50px;
             height: 70px;
-            background-image: url('img/num.png');
+            background-image: url('img/numpad.png');
             background-repeat : no-repeat;
             margin-right: 20px;
             float: left;
@@ -59,15 +59,24 @@
             z-index: 2;
         }
 
-        .map-list{
+        .table-back{
             height: 40%;
             width: 60%;
             position: absolute;
             z-index: 3;
-            margin-top: 380px;
-            margin-left: 188px;
+            margin-top: 93%;
+            margin-left: 40%;
             background-image: url("img/table.png");
             background-repeat: no-repeat;
+        }
+
+        .table-style{
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            border-collapse: separate;
+            border-spacing: 12px 10px;
+            margin-top: 15px;
         }
 
         .right-container{
@@ -83,6 +92,7 @@
             width: 95%;
             background-color: #181729;
             border-radius:10px 10px;
+            position: relative;
         }
 
 
@@ -101,9 +111,35 @@
         .button-charts{
             width: 100%;
             height: 100%;
+            position: absolute;
         }
 
     </style>
+    <script>
+        var baseNum=512;
+        function generator() {
+            var addNum=Math.floor(Math.random()*10+1);
+            baseNum+=addNum;
+            var a = parseInt(baseNum % 10);
+            var b = parseInt(baseNum % 100 /10);
+            var c = parseInt(baseNum / 100);
+            var d = parseInt(baseNum / 1000);
+            document.getElementById("one").innerHTML=a.toString();
+            document.getElementById("ten").innerHTML=b.toString();
+            document.getElementById("hundred").innerHTML=c.toString();
+            document.getElementById("thousand").innerHTML=d.toString();
+        }
+        window.setInterval(generator,5000);
+
+        function changePie1() {
+            document.getElementById("pieCharts1").style.visibility='hidden';
+            document.getElementById("pieCharts2").style.visibility='visible';
+        }
+        function changePie2() {
+            document.getElementById("pieCharts1").style.visibility='visible';
+            document.getElementById("pieCharts2").style.visibility='hidden';
+        }
+    </script>
 </head>
 <body class="myContainer">
     <div class="top">
@@ -113,10 +149,10 @@
         <div class="info-pad">
             <div class="number-pad">
                 <div style="color: white;font-size:18px;margin-top: 32px;margin-bottom: 32px">今日可疑逃费车辆</div>
-                <div class="num">1</div>
-                <div class="num">2</div>
-                <div class="num">3</div>
-                <div class="num">4</div>
+                <div id="thousand" class="num"></div>
+                <div id="hundred" class="num"></div>
+                <div id="ten" class="num"></div>
+                <div id="one" class="num"></div>
                 <div style="margin-right:20px;float: left;font-size: 18px;color: white;margin-top: 48px">辆</div>
                 <div style="float: left;font-size: 16px;color: white;margin-top: 50px">
                     环比昨日<span style="color: yellow"> ↑ 2%</span>
@@ -125,7 +161,55 @@
         </div>
         <div style="height: 80%;width: 100%;position: relative">
             <object class="highway-container" type="text/x-scriptlet" data="shanxiMap.html"></object>
-            <div class="map-list"></div>
+            <div class="table-back">
+                <div style="color: white;font-size: 14px;margin-top: 12px;margin-left: 15px">可疑车辆信息</div>
+                <table class="table-style">
+                    <thead>
+                    <tr>
+                        <th style="font-size: 14px">车牌号</th>
+                        <th style="font-size: 14px">高速出口</th>
+                        <th style="font-size: 14px">时间</th>
+                        <th style="font-size: 14px">状态</th>
+                    </tr>
+                    <tr>
+                        <td>晋A C4356</td>
+                        <td>新广武</td>
+                        <td>12:38</td>
+                        <td style="color: green">已推送</td>
+                    </tr>
+                    <tr>
+                        <td><a href="highDetail.html" style="text-decoration: none;color: white">晋J 7E392</a></td>
+                        <td><a href="highDetail.html" style="text-decoration: none;color: white">元营</a></td>
+                        <td><a href="highDetail.html" style="text-decoration: none;color: white">12:36</a></td>
+                        <td style="color: yellow"><a href="highDetail.html" style="text-decoration: none;color: yellow">未推送</a></td>
+                    </tr>
+                    <tr>
+                        <td>晋N 96447</td>
+                        <td>代县</td>
+                        <td>12:30</td>
+                        <td style="color: green">已推送</td>
+                    </tr>
+                    <tr>
+                        <td>晋A B7685</td>
+                        <td>晋城西</td>
+                        <td>12:29</td>
+                        <td style="color: green">已推送</td>
+                    </tr>
+                    <tr>
+                        <td>晋C 01872</td>
+                        <td>元营</td>
+                        <td>12:28</td>
+                        <td style="color: green">已推送</td>
+                    </tr>
+                    <tr>
+                        <td>晋D B2154</td>
+                        <td>代县</td>
+                        <td>12:24</td>
+                        <td style="color: green">已推送</td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
     <div class="right-container">
@@ -136,7 +220,12 @@
             <div class="top-charts" id="lowerRight"></div>
         </div>
         <div class="bottom-container">
-            <div class="button-charts" id="pieCharts"></div>
+            <div class="button-charts" id="pieCharts1" style="visibility: visible"></div>
+            <div class="button-charts" id="pieCharts2" style="visibility: hidden"></div>
+            <div style="position: absolute;margin-left: 92%">
+                <button type="button" onclick="changePie1()" >方式</button>
+                <button type="button" onclick="changePie2()" >金额</button>
+            </div>
         </div>
     </div>
 
@@ -144,6 +233,7 @@
     <script src="js/highway/onRight.js"></script>
     <script src="js/highway/lowerLeft.js"></script>
     <script src="js/highway/lowerRight.js"></script>
-    <script src="js/highway/statistics.js"></script>
+    <script src="js/highway/statistics1.js"></script>
+    <script src="js/highway/statistics2.js"></script>
 </body>
 </html>

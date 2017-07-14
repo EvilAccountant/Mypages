@@ -5,7 +5,7 @@
 var myChart = echarts.init(document.getElementById('radar'));
 
 option = {
-    backgroundColor: '#000000',//背景色
+    backgroundColor: '#1F3044',//背景色
     title: {
         text: '相关性分析',
         textStyle:{
@@ -50,7 +50,7 @@ option = {
         },
         data : [
             {
-                value : [0.95, 0.96, 0.91, 0.5, 0.94, 0.93],
+                value : [0.92953, 0.651386, 0.520516, 0.832894, 0.807085, 0.9513],
             },
         ]
     }]

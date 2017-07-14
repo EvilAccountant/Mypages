@@ -271,7 +271,7 @@ require(
             },
             options:[
                 {
-                    backgroundColor: '#000000',//背景色
+                    backgroundColor: '#1F3044',//背景色
                     title : {
                         text: '主要城市OD分析',
                         textStyle:{
@@ -302,6 +302,15 @@ require(
                                 normal : {
                                     label : {
                                         show:false,
+                                        rotate : true,
+                                        textStyle:{
+                                            color:'#fff'
+                                        }
+                                    }
+                                },
+                                emphasis:{
+                                    label:{
+                                        show:true,
                                         rotate : true,
                                         textStyle:{
                                             color:'#fff'

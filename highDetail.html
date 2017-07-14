@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .myContainer{
+            min-width: 1600px;
+            min-height: 900px;
+            width: 100%;
+            height: 100%;
+            background-color: #12101c;
+            display: flex;
+        }
+
+        .innerContainer{
+            margin-top: 30px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            width: 89%;
+            width: 93.75%;
+        }
+
+        .top{
+            height: 37%;
+            width: 100%;
+            background-color: #12101c;
+            margin-top: 35px;
+            display: flex;
+        }
+
+        .top1{
+            width: 16%;
+            height: 79%;
+            background-color: #171728;
+            margin-right: 20px;
+            border-radius:10px 10px;
+        }
+
+        .num-pad{
+            width: 23%;
+            height: 20%;
+            margin-top:5px;
+            background-image: url('img/number.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            color: white;
+            font-size: 18px;
+            z-index: 3;
+        }
+        .top2{
+            width: 32%;
+            height: 79%;
+            margin-right: 20px;
+            background-image: url("img/car1.png");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .top3{
+            width: 32%;
+            height: 79%;
+            margin-right: 20px;
+            background-image: url("img/car2.png");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .top4{
+            width: 16%;
+            height: 79%;
+            background-image: url("img/border.png");
+            background-repeat: no-repeat;
+        }
+
+        .table-top{
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            border-collapse: separate;
+            border-spacing: 20px 5px;
+            margin-top: 15px;
+        }
+
+        .middle{
+            height: 22%;
+            width: 100%;
+            margin-top: 20px;
+            border-radius:10px 10px;
+            display: flex;
+            text-align: center;
+        }
+
+        .middle-1{
+            width: 24%;
+            height: 100%;
+            margin-right: 20px;
+            background-color: #171728;
+            border-radius:10px 10px;
+
+        }
+
+        .middle-2{
+            width: 24%;
+            height: 100%;
+            margin-right: 20px;
+            background-color: #171728;
+            border-radius:10px 10px;
+
+        }
+
+        .middle-3{
+            width: 24%;
+            height: 100%;
+            margin-right: 20px;
+            background-color: #171728;
+            border-radius:10px 10px;
+
+        }
+
+        .middle-4 {
+            width: 24%;
+            height: 100%;
+            background-color: #171728;
+            border-radius:10px 10px;
+
+        }
+
+        .bottom{
+            height: 29%;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #171728;
+            border-radius:10px 10px;
+            position: relative;
+        }
+
+        .table-bottom{
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            border-collapse: separate;
+            border-spacing: 43px 20px;
+            margin-top: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="myContainer">
+        <div class="innerContainer">
+            <a href="highWay.html" style="color: white;font-size: 18px;text-decoration:none;">《返回首页</a>
+            <div class="top">
+                <div class="top1">
+                    <div style="color: white;font-size: 18px;margin-top: 20px;margin-left: 20px">基本信息</div>
+                    <div style="color: white;font-size: 16px;margin-top: 15px;margin-left: 20px">车牌号：<span style="color: yellow">晋J 7E392</span></div>
+                    <div style="color: white;font-size: 16px;margin-top: 15px;margin-left: 20px">车主姓名：<span style="color: yellow">赵东方</span></div>
+                    <div style="color: white;font-size: 16px;margin-top: 15px;margin-left: 20px">车辆类型：<span style="color: yellow">A2</span></div>
+                    <div style="color: white;font-size: 16px;margin-top: 15px;margin-left: 20px">车辆归属地：<span style="color: yellow">晋中市</span></div>
+                    <div style="color: white;font-size: 16px;margin-top: 15px;margin-left: 20px">累计逃费次数：<span style="color: yellow">6次</span></div>
+                </div>
+                <div class="top2">
+                    <div class="num-pad"><span style="margin-left: 5px;">序号1入口</span></div>
+                </div>
+                <div class="top3">
+                    <div class="num-pad"><span style="margin-left: 5px;">序号1出口</span></div>
+                </div>
+                <div class="top4">
+                    <div style="font-size: 18px;color: white;margin-top: 10px;margin-left: 15px">逃费记录</div>
+                    <table class="table-top">
+                        <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>类型</th>
+                            <th>金额</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/7/15</td>
+                            <td>冲岗</td>
+                            <td style="color: yellow">223</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/7/9</td>
+                            <td>假冒车</td>
+                            <td style="color: yellow">315</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/7/2</td>
+                            <td>假证</td>
+                            <td style="color: yellow">218</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/6/30</td>
+                            <td>记重</td>
+                            <td style="color: yellow">286</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/6/5</td>
+                            <td>记重</td>
+                            <td style="color: yellow">267</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left">2017/5/18</td>
+                            <td>冲岗</td>
+                            <td style="color: yellow">311</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="middle-1">
+                    <div style="color: white;font-size: 16px;margin-top: 40px">空载比例</div>
+                    <div style="color: #9cf13b;font-size: 72px">87%</div>
+                </div>
+                <div class="middle-2">
+                    <div style="color: white;font-size: 16px;margin-top: 40px">重载里程</div>
+                    <div style="color: #00ffff;font-size: 72px">37km</div>
+                </div>
+                <div class="middle-3">
+                    <div style="color: white;font-size: 16px;margin-top: 40px">车辆超时</div>
+                    <div style="color: #FF7550;font-size: 72px">0h</div>
+                </div>
+                <div class="middle-4">
+                    <div style="color: white;font-size: 16px;margin-top: 40px">空载比例</div>
+                    <div style="color: #ffc741;font-size: 72px">25km</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div style="color: white;font-size: 18px;margin-left: 40px;margin-top: 20px;position: absolute">车辆出入口信息</div>
+                <table class="table-bottom">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>出口流水号</th>
+                        <th>车牌</th>
+                        <th>入口站</th>
+                        <th>入站时间</th>
+                        <th>车辆荷载</th>
+                        <th>出口站</th>
+                        <th>出站时间</th>
+                        <th>里程</th>
+                        <th>耗时</th>
+                        <th>车辆荷载</th>
+                        <th>收费额</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td>OD1335590B541D16</td>
+                        <td>晋J 7E392</td>
+                        <td>代县</td>
+                        <td>2017/7/15 15:49</td>
+                        <td>8.2t</td>
+                        <td>元营</td>
+                        <td>20177/15 16:27</td>
+                        <td>36.8km</td>
+                        <td>38min</td>
+                        <td style="color: #f7724e">46.5t↑</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>OD1335590B564F02</td>
+                        <td>晋J 7E392</td>
+                        <td>新光武</td>
+                        <td>2017/7/15 15:25</td>
+                        <td>8.2t</td>
+                        <td>代县</td>
+                        <td>2017/7/15 15:45</td>
+                        <td>24.9km</td>
+                        <td>20min</td>
+                        <td>8.2t</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>OD1335590B64BA3B</td>
+                        <td>晋J 7E392</td>
+                        <td>晋城西</td>
+                        <td>2017/7/15 7:20</td>
+                        <td>46.5t</td>
+                        <td>新广武</td>
+                        <td>2017/7/15 15:20</td>
+                        <td>477.9km</td>
+                        <td>8h46min</td>
+                        <td style="color: #f7724e">8.2t↓</td>
+                        <td>360</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

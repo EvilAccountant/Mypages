@@ -24,7 +24,7 @@
             min-height: 900px;
             width: 100%;
             height: 100%;
-            background-color: #1b1b1b;
+            background-color: #1C2838;
         }
 
         .title-font{
@@ -35,43 +35,107 @@
         }
 
         .container-left {
-             min-height: 800px;
-             width: 22.5%;
-             background-color: #1b1b1b;
+             height: 94.67%;
+             width: 20%;
+             background-color: #1C2838;
              float: left;
+             margin-top: 20px;
+             margin-left: 20px;
          }
 
         .container-center{
-            min-height: 800px;
-            width: 55%;
-            margin: 0px auto 0;
-            padding: 10px;
+            height: 94.67%;
+            width: 56.25%;
             float: left;
+            margin-top: 20px;
+            margin-left: 10px;
         }
 
         .container-right {
-            min-height: 800px;
-            width: 22.5%;
-            background-color: #1b1b1b;
-            float: right;
-        }
-        .chart-up{
-            height: 390px;
-            width: 100%;
-            margin: 0 auto 10px;
-            background-color: #000000;
+            height: 94.67%;
+            width: 20%;
+            background-color: #1C2838;
+            float: left;
+            margin-top: 20px;
+            margin-left: 10px;
         }
 
-        .chart-button{
-            height: 410px;
+        .num-pad-1{
             width: 100%;
-            margin: 0 auto 0;
-            padding-bottom: 10px;
-            background-color: #000000;
+            height: 25%;
+            background-color: #1F3044;
+            border-radius:10px 10px;
+            text-align: center;
+            position: relative;
         }
 
+        .num-pad-2{
+            width: 100%;
+            height: 25%;
+            background-color: #1F3044;
+            margin-top: 20px;
+            border-radius:10px 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .left-up{
+            height: 52.5%;
+            width: 100%;
+            background-color: #1F3044;
+            border-radius:10px 10px;
+        }
+
+        .left-bottom{
+            height: 47.5%;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #1F3044;
+            border-radius:10px 10px;
+        }
+
+        .left-bottom{
+            height: 45%;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #1F3044;
+            border-radius:10px 10px;
+        }
 
     </style>
+    <script>
+        var a1=Math.floor(Math.random()*10+1);
+        var b1=Math.floor(Math.random()*100+1);
+        var c1=Math.floor(Math.random()*1000+1);
+        var d1=Math.floor(Math.random()*10000+1);
+        var e1=Math.floor(Math.random()*100000+1);
+        var f1=100000;
+        var baseNum1=a1+b1+c1+d1+e1+f1;
+
+        var a2=Math.floor(Math.random()*10+1);
+        var b2=Math.floor(Math.random()*100+1);
+        var c2=Math.floor(Math.random()*1000+1);
+        var d2=Math.floor(Math.random()*10000+1);
+        var e2=Math.floor(Math.random()*100000+1);
+        var f2=100000;
+        var baseNum2=a2+b2+c2+d2+e2+f2;
+
+        function generator1() {
+            var addNum=Math.floor(Math.random()*1000+1);
+            baseNum1+=addNum;
+            document.getElementById("num1").innerHTML=baseNum1.toString();
+            document.getElementById("tail1").innerHTML="辆";
+        }
+        function generator2() {
+            var addNum=Math.floor(Math.random()*1000+1);
+            baseNum2+=addNum;
+            document.getElementById("num2").innerHTML=baseNum2.toString();
+            document.getElementById("tail2").innerHTML="辆";
+        }
+
+        window.setInterval(generator1,5000);
+        window.setInterval(generator2,5000);
+    </script>
 </head>
 <body class="myContainer">
     <nav class="navbar navbar-inverse navbar-collapse">
@@ -86,15 +150,26 @@
             </div>
         </div>
     </nav>
-    <div style="padding: 10px">
+    <div style="display: flex;height: 834px">
         <div class="container-left">
-            <div class="chart-up"></div>
-            <div id="chord" class="chart-button"></div>
+            <div class="num-pad-1">
+                <div style="color: white;font-size: 16px;margin-top: 20px;margin-left: 20px;position: absolute">实时车辆流入</div>
+                <div id="num1" style="font-size: 72px;color: #7CE300;position: absolute;margin-top: 55px;margin-left: 30px"></div>
+                <div id="tail1" style="font-size: 20px;color: #7CE300;position: absolute;margin-top: 110px;margin-left: 280px"></div>
+
+            </div>
+            <div class="num-pad-2">
+                <div style="color: white;font-size: 16px;margin-top: 20px;margin-left: 20px;position: absolute">实时车辆流出</div>
+                <div id="num2" style="font-size: 72px;color: #FFCF16;position: absolute;margin-top: 55px;margin-left: 30px"></div>
+                <div id="tail2" style="font-size: 20px;color: #FFCF16;position: absolute;margin-top: 110px;margin-left: 280px"></div>
+
+            </div>
+            <div id="chord" class="left-bottom"></div>
         </div>
         <div class="container-center" id="timeMap"></div>
         <div class="container-right">
-            <div id="lines" class="chart-up"></div>
-            <div id="radar" class="chart-button"></div>
+            <div id="lines" class="left-up"></div>
+            <div id="radar" class="left-bottom"></div>
         </div>
     </div>
 

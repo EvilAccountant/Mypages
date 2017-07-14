@@ -14,7 +14,7 @@ require(
     ],
     function (echarts) {
         // 基于准备好的dom，初始化echarts图表
-        var myChart = echarts.init(document.getElementById('pieCharts'));
+        var myChart = echarts.init(document.getElementById('pieCharts2'));
 
         var labelTop = {
             normal : {
@@ -92,8 +92,8 @@ require(
                     x: '0%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:46, itemStyle : labelBottom},
-                        {name:'冲岗', value:54,itemStyle : labelTop}
+                        {name:'other', value:86, itemStyle : labelBottom},
+                        {name:'冲岗', value:14,itemStyle : labelTop}
                     ]
                 },
                 {
@@ -103,77 +103,68 @@ require(
                     x:'20%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:56, itemStyle : labelBottom},
-                        {name:'假冒绿通车', value:44,itemStyle : labelTop}
+                        {name:'other', value:94, itemStyle : labelBottom},
+                        {name:'假冒绿通车', value:6,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['62.5%', '32%'],
                     radius : radius,
-                    x:'40%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:65, itemStyle : labelBottom},
-                        {name:'记重逃费', value:35,itemStyle : labelTop}
+                        {name:'other', value:49.5, itemStyle : labelBottom},
+                        {name:'记重逃费', value:50.5,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['87.5%', '32%'],
                     radius : radius,
-                    x:'60%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:70, itemStyle : labelBottom},
-                        {name:'换卡换牌', value:30,itemStyle : labelTop}
+                        {name:'other', value:96, itemStyle : labelBottom},
+                        {name:'换卡换牌', value:4,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['12.5%', '75%'],
                     radius : radius,
-                    x:'80%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:73, itemStyle : labelBottom},
-                        {name:'U/J型', value:27,itemStyle : labelTop}
+                        {name:'other', value:93, itemStyle : labelBottom},
+                        {name:'U/J型', value:7,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['37.5%', '75%'],
                     radius : radius,
-                    y: '55%',   // for funnel
-                    x: '0%',    // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'假证', value:22,itemStyle : labelTop}
+                        {name:'other', value:95, itemStyle : labelBottom},
+                        {name:'假证', value:5,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['62.5%', '75%'],
                     radius : radius,
-                    y: '55%',   // for funnel
-                    x:'20%',    // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'黑名单', value:22,itemStyle : labelTop}
+                        {name:'other', value:99, itemStyle : labelBottom},
+                        {name:'黑名单', value:1,itemStyle : labelTop}
                     ]
                 },
                 {
                     type : 'pie',
                     center : ['87.5%', '75%'],
                     radius : radius,
-                    y: '55%',   // for funnel
-                    x:'40%', // for funnel
                     itemStyle : labelFromatter,
                     data : [
-                        {name:'other', value:78, itemStyle : labelBottom},
-                        {name:'混合', value:22,itemStyle : labelTop}
+                        {name:'other', value:90, itemStyle : labelBottom},
+                        {name:'混合', value:10,itemStyle : labelTop}
                     ]
                 },
             ]

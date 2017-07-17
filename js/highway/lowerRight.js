@@ -128,11 +128,27 @@ require(
                         var len = 0;
                         var now = new Date();
                         var value;
-                        while (len++ < 600) {
+                        while (len++ < 300) {
                             d.push([
                                 new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
-                                (Math.random()*90+5).toFixed(2) - 0,//散点Y轴范围
+                                (Math.random()*50+40).toFixed(2) - 0,//散点Y轴范围
+                                (Math.random()*30).toFixed(2) - 0//散点值/半径大小
+                            ]);
+                        }
+                        len=0;
+                        while (len++ < 300) {
+                            d.push([
+                                new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                                (Math.random()*50).toFixed(2) - 0,//散点Y轴范围
                                 (Math.random()*80).toFixed(2) - 0//散点值/半径大小
+                            ]);
+                        }
+                        len=0;
+                        while (len++ < 100) {
+                            d.push([
+                                new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                                (Math.random()*200).toFixed(2) - 0,//散点Y轴范围
+                                (Math.random()*20).toFixed(2) - 0//散点值/半径大小
                             ]);
                         }
                         return d;

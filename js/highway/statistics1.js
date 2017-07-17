@@ -72,7 +72,7 @@ require(
                   color:'#ffffff'
                 },
                 data:[
-                    '冲岗','U/J型','假冒绿通车','假证','记重逃费', '黑名单','换卡换牌', '混合'
+                    '冲岗','U/J型','假冒绿通车','假证','记重逃费', '甩挂','换卡换牌', '混合'
                 ]
             },
             title : {
@@ -154,7 +154,7 @@ require(
                     itemStyle : labelFromatter,
                     data : [
                         {name:'other', value:99, itemStyle : labelBottom},
-                        {name:'黑名单', value:1,itemStyle : labelTop}
+                        {name:'甩挂', value:1,itemStyle : labelTop}
                     ]
                 },
                 {

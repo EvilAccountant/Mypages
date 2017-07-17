@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>高速公路稽查逃费分析</title>
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
     <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <style>
         *{
@@ -16,7 +17,6 @@
             min-width: 1600px;
             min-height: 900px;
             width: 100%;
-            height: 100%;
             background-color: #12101B;
         }
 
@@ -29,8 +29,8 @@
         }
 
         .left-container{
-            width: 27.625%;
-            height: 814px;
+            width: 28.75%;
+            height: 844px;
             background-color: #12101B;
             margin-left: 50px;
             float: left;
@@ -83,16 +83,17 @@
         }
 
         .right-container{
-            width: 68%;
-            height: 814px;
+            width: 65%;
+            height: 834px;
             margin-top: 10px;
+            margin-right: 50px;
             background-color: #12101B;
             float: right;
         }
 
         .bottom-container{
-            height: 35%;
-            width: 95%;
+            height: 40%;
+            width: 98%;
             background-color: #181729;
             border-radius:10px 10px;
             position: relative;
@@ -100,12 +101,12 @@
 
 
         .top-container{
-            height: 65%;
+            height: 60%;
             background-color: #12101B;
         }
 
         .top-charts{
-            height: 45%;
+            height: 50%;
             width: 50%;
             background-color: #12101B;
             float: left;
@@ -125,35 +126,32 @@
             baseNum+=addNum;
             var a = parseInt(baseNum % 10);
             var b = parseInt(baseNum % 100 /10);
-            var c = parseInt(baseNum / 100);
-            var d = parseInt(baseNum / 1000);
+            var c = parseInt(baseNum % 1000 /100);
+            var d = parseInt(baseNum % 10000 /1000);
             document.getElementById("one").innerHTML=a.toString();
             document.getElementById("ten").innerHTML=b.toString();
             document.getElementById("hundred").innerHTML=c.toString();
             document.getElementById("thousand").innerHTML=d.toString();
         }
-        window.setInterval(generator,5000);
+        window.setInterval(generator,10000);
 
         function changePie1() {
             document.getElementById("pieCharts1").style.visibility='hidden';
-            document.getElementById("access").className="btn btn-info btn-sm";
-
+            document.getElementById("access").className="btn btn-primary btn-sm";
             document.getElementById("pieCharts2").style.visibility='visible';
-            document.getElementById("money").className="btn btn-info btn-sm active";
+            document.getElementById("money").className="btn btn-primary btn-sm active";
         }
         function changePie2() {
             document.getElementById("pieCharts1").style.visibility='visible';
-            document.getElementById("access").className="btn btn-info btn-sm active";
-
+            document.getElementById("access").className="btn btn-primary btn-sm active";
             document.getElementById("pieCharts2").style.visibility='hidden';
-            document.getElementById("money").className="btn btn-info btn-sm";
-
+            document.getElementById("money").className="btn btn-primary btn-sm";
         }
     </script>
 </head>
 <body class="myContainer">
     <div class="top">
-        <img src="img/title.png" style="margin-bottom: 0">
+        <img src="img/title.png">
     </div>
     <div class="left-container">
         <div class="info-pad">
@@ -234,6 +232,14 @@
             <div class="button-charts" id="pieCharts1" style="visibility: visible"></div>
             <div class="button-charts" id="pieCharts2" style="visibility: hidden"></div>
             <div style="position: absolute;margin-left: 90%;margin-top: 10px">
+                <!--<div class="btn-group" data-toggle="buttons">-->
+                    <!--<label class="btn btn-primary btn-sm active">-->
+                        <!--<input type="radio" id="access" name="options" onclick="changePie1()"> 方式-->
+                    <!--</label>-->
+                    <!--<label class="btn btn-primary btn-sm">-->
+                        <!--<input type="radio" id="money" name="options" onclick="changePie2()"> 金额-->
+                    <!--</label>-->
+                <!--</div>-->
                 <button id="access" type="button" class="btn btn-info btn-sm active" onclick="changePie1()">方式</button>
                 <button id="money" type="button" class="btn btn-info btn-sm" onclick="changePie2()">金额</button>
             </div>

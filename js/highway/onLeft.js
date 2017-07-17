@@ -32,7 +32,7 @@ require(
             },
             dataRange: {
                 min: 0,
-                max: 600,
+                max: 100,
                 y: 'center',
                 text:['高','低'],           // 文本，默认为数值文本
                 color:['#00aaff','#00ffff'],
@@ -41,15 +41,15 @@ require(
             dataZoom: {
                 show: true,
                 x:80,
-                y:220,
-                start : 15,
-                end : 85,
+                y:230,
+                start : 30,
+                end : 70,
                 height:15,
                 width:400,
             },
             xAxis : [
                 {
-                    type : 'value',
+                    type : 'time',
                     scale : true,
                     axisLine:{
                         lineStyle:{
@@ -102,14 +102,36 @@ require(
                     symbolSize:3,
                     data: (function () {
                         var d = [];
-                        var len = 600;
-                        var value;
+                        // var len = 600;
+                        // while (len--) {
+                        //     d.push([
+                        //         new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                        //         (Math.random()*600).toFixed(2) - 0,//Y范围
+                        //         (Math.random()*100).toFixed(2) - 0 //value（颜色）
+                        //     ]);
+                        // }
+                        len = 800;
                         while (len--) {
-                            value = (Math.random()*600).toFixed(2) - 0;
                             d.push([
-                                (Math.random()*value + value).toFixed(2) - 0,
-                                (Math.random()*value).toFixed(2) - 0,
-                                value
+                                new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                                (Math.random()*300).toFixed(2) - 0,
+                                (Math.random()*33).toFixed(2) - 0
+                            ]);
+                        }
+                        len = 300;
+                        while (len--) {
+                            d.push([
+                                new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                                (Math.random()*300+200).toFixed(2) - 0,
+                                (Math.random()*88).toFixed(2) - 0
+                            ]);
+                        }
+                        len = 200;
+                        while (len--) {
+                            d.push([
+                                new Date(2017, 6, 8, 0, Math.round(Math.random()*4322)),
+                                (Math.random()*400+200).toFixed(2) - 0,
+                                (Math.random()*66+33).toFixed(2) - 0
                             ]);
                         }
                         return d;

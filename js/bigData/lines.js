@@ -43,7 +43,9 @@ option = {
     },
     xAxis: {
         name:'',
-        data: ['京沪高速苏州段', '京沪高速无锡段', '沈海高速南通段', '京沪高速泰州段', '扬溧高速镇江段'],
+        type:'category',
+        axisLabel:{interval:0},
+        data: ['京沪高速\n苏州段', '京沪高速\n无锡段', '沈海高速\n南通段', '京沪高速\n泰州段', '扬溧高速\n镇江段'],
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',

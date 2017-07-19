@@ -27,8 +27,8 @@ require(
             },
             dataZoom: {
                 show: true,
-                x:80,
-                y:220,
+                x:55,
+                y:235,
                 start : 15,
                 end : 85,
                 height:15,

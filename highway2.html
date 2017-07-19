@@ -78,7 +78,7 @@
 
         .left-bottom{
             width: 100%;
-            height: 82%;
+            height: 78%;
             position: relative;
         }
 
@@ -89,12 +89,12 @@
         }
 
         .table-back{
-            height: 40%;
-            width: 60%;
+            height: 245px;
+            width: 250px;
             position: absolute;
             z-index: 1;
-            margin-top: 380px;
-            margin-left: 190px;
+            margin-top: 385px;
+            margin-left: 180px;
             background-image: url("img/table.png");
             background-repeat: no-repeat;
         }
@@ -158,17 +158,17 @@
         }
         window.setInterval(generator,10000);
 
-        function changePie1() {
-            document.getElementById("pieCharts1").style.visibility='hidden';
-            document.getElementById("access").className="btn btn-info btn-sm";
-            document.getElementById("pieCharts2").style.visibility='visible';
-            document.getElementById("money").className="btn btn-info btn-sm active";
-        }
         function changePie2() {
+            document.getElementById("pieCharts1").style.visibility='hidden';
+            document.getElementById("access").className="btn btn-primary btn-sm";
+            document.getElementById("pieCharts2").style.visibility='visible';
+            document.getElementById("money").className="btn btn-primary btn-sm active";
+        }
+        function changePie1() {
             document.getElementById("pieCharts1").style.visibility='visible';
-            document.getElementById("access").className="btn btn-info btn-sm active";
+            document.getElementById("access").className="btn btn-primary btn-sm active";
             document.getElementById("pieCharts2").style.visibility='hidden';
-            document.getElementById("money").className="btn btn-info btn-sm";
+            document.getElementById("money").className="btn btn-primary btn-sm";
         }
     </script>
 </head>
@@ -201,38 +201,38 @@
                                 <th style="font-size: 14px">状态</th>
                             </tr>
                             <tr>
-                                <td>晋A C4356</td>
-                                <td>新广武</td>
+                                <td>陕A C4356</td>
+                                <td>略阳</td>
                                 <td>12:38</td>
                                 <td style="color: green">已推送</td>
                             </tr>
                             <tr>
-                                <td><a href="highDetail.html" style="text-decoration: none;color: white">晋J 7E392</a></td>
-                                <td><a href="highDetail.html" style="text-decoration: none;color: white">元营</a></td>
+                                <td><a href="highDetail.html" style="text-decoration: none;color: white">陕B 7E392</a></td>
+                                <td><a href="highDetail.html" style="text-decoration: none;color: white">壶口</a></td>
                                 <td><a href="highDetail.html" style="text-decoration: none;color: white">12:36</a></td>
                                 <td style="color: yellow"><a href="highDetail.html" style="text-decoration: none;color: yellow">未推送</a></td>
                             </tr>
                             <tr>
-                                <td>晋N 96447</td>
-                                <td>代县</td>
+                                <td>陕C 96447</td>
+                                <td>火烧寨</td>
                                 <td>12:30</td>
                                 <td style="color: green">已推送</td>
                             </tr>
                             <tr>
-                                <td>晋A B7685</td>
-                                <td>晋城西</td>
+                                <td>陕B B7685</td>
+                                <td>东坪</td>
                                 <td>12:29</td>
                                 <td style="color: green">已推送</td>
                             </tr>
                             <tr>
-                                <td>晋C 01872</td>
-                                <td>元营</td>
+                                <td>陕C 01872</td>
+                                <td>坪头</td>
                                 <td>12:28</td>
                                 <td style="color: green">已推送</td>
                             </tr>
                             <tr>
-                                <td>晋D B2154</td>
-                                <td>代县</td>
+                                <td>陕C B2154</td>
+                                <td>天柱山</td>
                                 <td>12:24</td>
                                 <td style="color: green">已推送</td>
                             </tr>
@@ -250,8 +250,10 @@
                     <div class="right-charts" id="lowerRight"></div>
                 </div>
                 <div class="right-bottom">
+                    <div class="bottom-charts" id="pieCharts1" style="visibility: visible"></div>
+                    <div class="bottom-charts" id="pieCharts2" style="visibility: hidden"></div>
                     <div style="color: white;font-size:18px;position: absolute;">本月逃费统计</div>
-                    <div style="position: absolute;margin-left: 89%;">
+                    <div style="position: relative;margin-left: 90%;">
                         <!--<div class="btn-group" data-toggle="buttons">-->
                         <!--<label class="btn btn-primary btn-sm active">-->
                         <!--<input type="radio" id="access" name="options" onclick="changePie1()"> 方式-->
@@ -260,11 +262,9 @@
                         <!--<input type="radio" id="money" name="options" onclick="changePie2()"> 金额-->
                         <!--</label>-->
                         <!--</div>-->
-                        <button id="access" type="button" class="btn btn-info btn-sm active" onclick="changePie1()">方式</button>
-                        <button id="money" type="button" class="btn btn-info btn-sm" onclick="changePie2()">金额</button>
+                        <button id="access" type="button" class="btn btn-primary btn-sm active" style="margin: 0" onclick="changePie1()">方式</button>
+                        <button id="money" type="button" class="btn btn-primary btn-sm" style="margin: 0" onclick="changePie2()">金额</button>
                 </div>
-                    <div class="bottom-charts" id="pieCharts1" style="visibility: visible"></div>
-                    <div class="bottom-charts" id="pieCharts2" style="visibility: hidden"></div>
             </div>
         </div>
         </div>

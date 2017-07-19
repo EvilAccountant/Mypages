@@ -45,9 +45,10 @@ option = {
         itemGap: 18,
         data: [
             {name:'主要高速公路',icon:'line'},
+            {name:'主要高速入口',icon:'circle'},
             {name:'煤矿',icon:'triangle'},
             {name:'金属矿',icon:'diamond'},
-            {name:'天然气',icon:'circle'}
+            {name:'天然气',icon:'pin'}
         ],
     },
     series: [
@@ -122,7 +123,7 @@ option = {
             name: '天然气',
             type: 'scatter',
             coordinateSystem: 'geo',
-            symbol:'circle',
+            symbol:'pin',
             symbolSize: 14,
             zlevel: 3,
             rippleEffect: {
@@ -130,7 +131,7 @@ option = {
             },
             itemStyle:{
                 normal:{
-                    color:"#F3E925"
+                    color:"#00D3FF"
                 }
             },
             data:[
@@ -178,6 +179,27 @@ option = {
                 {value:[108.6004,34.0547]},
                 {value:[110.1319,34.3527]},
                 {value:[109.8882,33.5478]},
+            ]
+        },
+        {
+            name: '主要高速入口',
+            type: 'effectScatter',
+            coordinateSystem: 'geo',
+            symbol:'circle',
+            symbolSize: 10,
+            zlevel: 2,
+            itemStyle:{
+                normal:{
+                    color:"#F3E925"
+                }
+            },
+            data:[
+                {name:'坪头',value:[106.892057,34.397671]},
+                {name:'火烧寨',value:[106.794173,35.024847]},
+                {name:'略阳',value:[106.060223,33.571414]},
+                {name:'壶口',value:[110.643922,36.078138]},
+                {name:'天柱山',value:[110.087024,33.391078]},
+                {name:'东坪',value:[109.183878,33.309192]},
             ]
         },
 

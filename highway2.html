@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高速公路稽查逃费分析</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .myContainer{
+            min-width: 1600px;
+            min-height: 900px;
+            width: 100%;
+            height: 100%;
+            background-color: #12101C;
+        }
+
+        .innerContainer{
+            height: 880px;
+            width: 93.75%;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 20px;
+        }
+
+        .top{
+            height: 21px;
+            width: 100%;
+            background-color: #12101C;
+        }
+
+        .header{
+            height: 45px;
+            width: 100%;
+            background-color: #12101C;
+            background-image: url("img/title.png");
+            background-repeat: no-repeat;
+            display: block;
+        }
+
+        .body-container{
+            height: 814px;
+            padding-top: 4px;
+            display: flex;
+            box-sizing: border-box;/**padding不会撑大box尺寸*/
+        }
+
+        .left-container{
+            height: 100%;
+            width: 30%;
+        }
+
+        .left-top{
+            width: 100%;
+            height: 18%;
+            background-color: #12101C;
+            color: white;
+        }
+
+        .num{
+            width: 50px;
+            height: 70px;
+            background-image: url('img/numpad.png');
+            background-repeat : no-repeat;
+            margin-right: 20px;
+            float: left;
+            color: white;
+            text-align: center;
+            font-size: 48px;
+            padding-top: 5px;
+        }
+
+        .left-bottom{
+            width: 100%;
+            height: 82%;
+            position: relative;
+        }
+
+        .left-chart{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .table-back{
+            height: 40%;
+            width: 60%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 380px;
+            margin-left: 190px;
+            background-image: url("img/table.png");
+            background-repeat: no-repeat;
+        }
+
+        .table-style{
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            border-collapse: separate;
+            border-spacing: 12px 10px;
+            margin-top: 15px;
+        }
+
+        .right-container{
+            height: 100%;
+            width: 70%;
+            background-color: #12101C;
+        }
+
+        .right-top{
+            width: 100%;
+            height: 63%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .right-charts{
+            width: 50%;
+            height: 50%;
+        }
+
+        .right-bottom{
+            width: 100%;
+            height: 37%;
+            padding: 10px;
+            box-sizing: border-box;/**padding不会撑大box尺寸*/
+            border-radius:10px 10px;
+            background-color: #181729;
+            position: relative;
+        }
+
+        .bottom-charts{
+            width: 98%;
+            height: 94%;
+            position: absolute;
+        }
+    </style>
+    <script>
+        var baseNum=512;
+        function generator() {
+            var addNum=Math.floor(Math.random()*10+1);
+            baseNum+=addNum;
+            var a = parseInt(baseNum % 10);
+            var b = parseInt(baseNum % 100 /10);
+            var c = parseInt(baseNum % 1000 /100);
+            var d = parseInt(baseNum % 10000 /1000);
+            document.getElementById("one").innerHTML=a.toString();
+            document.getElementById("ten").innerHTML=b.toString();
+            document.getElementById("hundred").innerHTML=c.toString();
+            document.getElementById("thousand").innerHTML=d.toString();
+        }
+        window.setInterval(generator,10000);
+
+        function changePie1() {
+            document.getElementById("pieCharts1").style.visibility='hidden';
+            document.getElementById("access").className="btn btn-info btn-sm";
+            document.getElementById("pieCharts2").style.visibility='visible';
+            document.getElementById("money").className="btn btn-info btn-sm active";
+        }
+        function changePie2() {
+            document.getElementById("pieCharts1").style.visibility='visible';
+            document.getElementById("access").className="btn btn-info btn-sm active";
+            document.getElementById("pieCharts2").style.visibility='hidden';
+            document.getElementById("money").className="btn btn-info btn-sm";
+        }
+    </script>
+</head>
+<body class="myContainer" style="overflow:scroll;overflow-x:hidden">
+    <div class="innerContainer">
+        <div class="top"></div>
+        <div class="header"></div>
+        <div class="body-container">
+            <div class="left-container">
+                <div class="left-top">
+                        <div style="color: white;font-size:18px;margin-top: 32px;margin-bottom: 32px">今日可疑逃费车辆</div>
+                        <div id="thousand" class="num" style="margin-left: 80px"></div>
+                        <div id="hundred" class="num"></div>
+                        <div id="ten" class="num"></div>
+                        <div id="one" class="num"></div>
+                        <div style="margin-right:20px;float: left;font-size: 18px;color: white;margin-top: 48px">辆</div>
+                        <!--<div style="float: left;font-size: 16px;color: white;margin-top: 50px">-->
+                        <!--环比昨日<span style="color: yellow"> ↑ 2%</span>-->
+                        <!--</div>-->
+                </div>
+                <div class="left-bottom">
+                    <div class="table-back">
+                        <div style="color: white;font-size: 14px;margin-top: 12px;margin-left: 15px">可疑车辆信息</div>
+                        <table class="table-style">
+                            <thead>
+                            <tr>
+                                <th style="font-size: 14px">车牌号</th>
+                                <th style="font-size: 14px">高速出口</th>
+                                <th style="font-size: 14px">时间</th>
+                                <th style="font-size: 14px">状态</th>
+                            </tr>
+                            <tr>
+                                <td>晋A C4356</td>
+                                <td>新广武</td>
+                                <td>12:38</td>
+                                <td style="color: green">已推送</td>
+                            </tr>
+                            <tr>
+                                <td><a href="highDetail.html" style="text-decoration: none;color: white">晋J 7E392</a></td>
+                                <td><a href="highDetail.html" style="text-decoration: none;color: white">元营</a></td>
+                                <td><a href="highDetail.html" style="text-decoration: none;color: white">12:36</a></td>
+                                <td style="color: yellow"><a href="highDetail.html" style="text-decoration: none;color: yellow">未推送</a></td>
+                            </tr>
+                            <tr>
+                                <td>晋N 96447</td>
+                                <td>代县</td>
+                                <td>12:30</td>
+                                <td style="color: green">已推送</td>
+                            </tr>
+                            <tr>
+                                <td>晋A B7685</td>
+                                <td>晋城西</td>
+                                <td>12:29</td>
+                                <td style="color: green">已推送</td>
+                            </tr>
+                            <tr>
+                                <td>晋C 01872</td>
+                                <td>元营</td>
+                                <td>12:28</td>
+                                <td style="color: green">已推送</td>
+                            </tr>
+                            <tr>
+                                <td>晋D B2154</td>
+                                <td>代县</td>
+                                <td>12:24</td>
+                                <td style="color: green">已推送</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <object class="left-chart" type="text/x-scriptlet" data="shanxiMap.html"></object>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="right-top">
+                    <div class="right-charts" id="onLeft"></div>
+                    <div class="right-charts" id="onRight"></div>
+                    <div class="right-charts" id="lowerLeft"></div>
+                    <div class="right-charts" id="lowerRight"></div>
+                </div>
+                <div class="right-bottom">
+                    <div style="color: white;font-size:18px;position: absolute;">本月逃费统计</div>
+                    <div style="position: absolute;margin-left: 89%;">
+                        <!--<div class="btn-group" data-toggle="buttons">-->
+                        <!--<label class="btn btn-primary btn-sm active">-->
+                        <!--<input type="radio" id="access" name="options" onclick="changePie1()"> 方式-->
+                        <!--</label>-->
+                        <!--<label class="btn btn-primary btn-sm">-->
+                        <!--<input type="radio" id="money" name="options" onclick="changePie2()"> 金额-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <button id="access" type="button" class="btn btn-info btn-sm active" onclick="changePie1()">方式</button>
+                        <button id="money" type="button" class="btn btn-info btn-sm" onclick="changePie2()">金额</button>
+                </div>
+                    <div class="bottom-charts" id="pieCharts1" style="visibility: visible"></div>
+                    <div class="bottom-charts" id="pieCharts2" style="visibility: hidden"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="js/highway/onLeft.js"></script>
+    <script src="js/highway/onRight.js"></script>
+    <script src="js/highway/lowerLeft.js"></script>
+    <script src="js/highway/lowerRight.js"></script>
+    <script src="js/highway/statistics1.js"></script>
+    <script src="js/highway/statistics2.js"></script>
+</body>
+</html>

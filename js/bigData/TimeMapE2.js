@@ -294,7 +294,21 @@ require(
                     '2014','2015','2016'
                 ],
                 autoPlay : true,
-                playInterval : 8000
+                playInterval : 10000,
+                symbol:'circle',
+                lineStyle:{
+                    color:'#fff',
+                    type:'solid',
+                },
+                label:{
+                    textStyle:{
+                    }
+                },
+                controlStyle:{
+                    normal:{
+                        color:'#fff',
+                    }
+                }
             },
             options:[
                 {

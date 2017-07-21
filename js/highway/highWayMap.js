@@ -186,20 +186,25 @@ option = {
             type: 'effectScatter',
             coordinateSystem: 'geo',
             symbol:'circle',
-            symbolSize: 10,
             zlevel: 2,
             itemStyle:{
                 normal:{
                     color:"#F3E925"
                 }
             },
+            rippleEffect:{
+                period:2,
+                scale:3
+            },
             data:[
-                {name:'坪头',value:[106.892057,34.397671]},
-                {name:'火烧寨',value:[106.794173,35.024847]},
-                {name:'略阳',value:[106.060223,33.571414]},
-                {name:'壶口',value:[110.643922,36.078138]},
-                {name:'天柱山',value:[110.087024,33.391078]},
-                {name:'东坪',value:[109.183878,33.309192]},
+                {name:'坪头',value:[106.892057,34.397671],symbolSize:17},
+                {name:'火烧寨',value:[106.794173,35.024847],symbolSize:15},
+                {name:'略阳',value:[106.060223,33.571414],symbolSize:15},
+                {name:'壶口',value:[110.643922,36.078138],symbolSize:12},
+                {name:'天柱山',value:[110.087024,33.391078],symbolSize:10},
+                {name:'东坪',value:[109.183878,33.309192],symbolSize:10},
+                {name:'榆林',value:[109.787689,38.163302],symbolSize:7},
+                {name:'富县',value:[109.381457,35.935551],symbolSize:7},
             ]
         },
 

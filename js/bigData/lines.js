@@ -8,32 +8,38 @@ option = {
     backgroundColor: '#1F3044',//背景色
     title: {
         text: '江苏高速拥堵指数',
-        x:"center",
         textStyle:{
             fontSize:16,
-            color:"#ffffff"
+            color:"#ffffff",
+            fontWeight:'normal'
         },
+        x:20,
+        y:20
     },
     legend:{
-        top:'bottom',
+        x:100,
+        y:60,
         data:[
             {
                 name: '2014',
                 textStyle:{
                     color:"#ffffff"
-                }
-        },
+                },
+                icon:'circle'
+            },
             {
                 name: '2015',
-            textStyle:{
+                textStyle:{
                 color:"#ffffff"
-            }
-        },
+                },
+                icon:'circle'
+            },
             {
                 name: '2016',
                 textStyle:{
                     color:"#ffffff"
-                }
+                },
+                icon:'circle'
             },
         ]
     },
@@ -41,9 +47,16 @@ option = {
     tooltip:{
         trigger: 'axis'
     },
+    grid:{
+        top:110,
+        left:'15%',
+        width:245,
+        height:250,
+    },
     xAxis: {
         name:'',
         type:'category',
+        boundaryGap:false,
         axisLabel:{interval:0},
         data: ['京沪高速\n苏州段', '京沪高速\n无锡段', '沈海高速\n南通段', '京沪高速\n泰州段', '扬溧高速\n镇江段'],
         axisLine:{
@@ -56,14 +69,22 @@ option = {
     yAxis: {
         name:'',
         type:'value',
-        min:1,
-        max:1.8,
+        min:1.1,
+        max:1.6,
+        splitNumber:8,//分隔次数
         axisLine:{
             lineStyle:{
                 color:'#66D2FF',
                 width:1
             }
         },
+        splitLine:{
+            show:true,
+            lineStyle:{
+                color:'#344557',
+
+            }
+        }
     },
     series: [
         {

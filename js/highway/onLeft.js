@@ -35,7 +35,7 @@ require(
                 max: 100,
                 y: 'center',
                 text:['高','低'],           // 文本，默认为数值文本
-                color:['#00aaff','#00ffff'],
+                color:['#005fff','#3fa4ff','#00ffed'],
                 calculable : true
             },
             dataZoom: {

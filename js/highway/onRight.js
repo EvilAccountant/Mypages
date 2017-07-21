@@ -31,7 +31,6 @@ require(
             xAxis : [
                 {
                     name:'(km)',
-                    axisLabel:{interval:0},
                     type : 'category',
                     axisLine:{
                         lineStyle:{
@@ -40,6 +39,7 @@ require(
                         }
                     },
                     axisLabel:{
+                        interval:0,
                         show:true,
                         textStyle:{
                             color:'#ffffff'
